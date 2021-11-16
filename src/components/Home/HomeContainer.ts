@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { breackpoints } from "../../styles/breackpoints";
+import { colorLight } from "../../styles/theme";
 
 export const HomeContainer = styled.section`
   display: grid;
@@ -14,6 +15,7 @@ export const HomeContainer = styled.section`
   span {
     margin-bottom: 1rem;
     font-size: 2rem;
+    font-weight: 500;
   }
   h1 {
     text-align: center;
@@ -33,7 +35,7 @@ export const HomeContainer = styled.section`
       list-style: none;
       margin-right: 1rem;
       margin-bottom: .8rem;
-      border: 2px solid #ccc;
+      /* border: 2px solid ${colorLight.colorTextSecondary}; */
       border-radius: .8rem;
       padding: .4rem .5rem;
     }

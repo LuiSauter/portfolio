@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const Tag = ({text}: Props) => {
-  return <li>{text}</li>
+  return <li className='border-color'>{text}</li>
 }
