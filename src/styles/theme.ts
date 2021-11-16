@@ -10,6 +10,6 @@ export const colorLight = {
   colorPrimary: '#ffffff',
   colorSecondary: '#000000',
   colorTextPrimary: '#000000',
-  colorTextSecondary: '#81888f',
+  colorTextSecondary: '#4a5568',
   colorTextThird: '#0099ff'
 }

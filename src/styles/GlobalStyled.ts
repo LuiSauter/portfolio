@@ -42,6 +42,10 @@ export const GlobalStyle = createGlobalStyle`
       color: ${colorDark.colorTextPrimary};
     }
 
+    .border-color {
+      border: 2px solid ${colorDark.colorTextThird};
+    }
+
     .current {
       .btn-svg, span {
         background-color: ${colorDark.colorTextPrimary};
@@ -74,6 +78,9 @@ export const GlobalStyle = createGlobalStyle`
       color: ${colorLight.colorTextPrimary};
     }
 
+    .border-color {
+      border: 2px solid ${colorLight.colorTextThird};
+    }
     .current {
       span, .btn-svg {
         background-color: ${colorLight.colorTextPrimary};
