@@ -54,13 +54,25 @@ export const GlobalStyle = createGlobalStyle`
         border: 2px solid ${colorDark.colorTextThird};
       }
       button {
-        background-color: ${colorDark.colorTextThird}
+        background-color: ${colorDark.colorTextThird};
+      }
+      .home-head {
+        svg {
+          color: ${colorDark.colorTextPrimary};
+          &:hover {
+            color: ${colorDark.colorTextSecondary};
+          }
+        }
+      }
+      .home-art figure {
+        background-color: ${colorDark.colorSecondary};
+        border: .4rem solid ${colorDark.colorSecondary};
       }
     }
     nav span, .btn-svg {
       transition: transform .3s;
       &:hover {
-        outline: 1 solid ${colorDark.colorTextPrimary};
+        outline: 1px solid ${colorDark.colorTextPrimary};
         outline-offset: -1px;
         transform: translateY(10%);
       }
@@ -79,8 +91,8 @@ export const GlobalStyle = createGlobalStyle`
   .light {
     transition: background .4s ease-in-out;
     background-color: ${colorLight.colorPrimary};
+    color: ${colorLight.colorTextPrimary};
     header {
-      /* background-color: ${colorLight.colorPrimary}aa; */
       backdrop-filter: blur(3px);
       h1:hover {
         transition: border-bottom .3s ease-out;
@@ -90,7 +102,6 @@ export const GlobalStyle = createGlobalStyle`
     .card-background {
       background-color: ${colorLight.colorSecondary}
     }
-    color: ${colorLight.colorTextPrimary};
     .text-primary {
       color: ${colorLight.colorTextPrimary};
     }
@@ -105,11 +116,27 @@ export const GlobalStyle = createGlobalStyle`
     }
     section {
       .border-color {
-        border: 2px solid ${colorLight.colorSecondary};
+        border: 2px solid ${colorLight.colorTextPrimary};
+        user-select: none;
+        box-shadow: 0px 1px 2px ${colorLight.colorTextSecondary};
       }
       button {
         background-color: ${colorLight.colorSecondary};
-        color: ${colorLight.colorPrimary}
+        color: ${colorLight.colorPrimary};
+        user-select: none;
+      }
+      .home-head {
+        svg {
+          color: ${colorLight.colorTextPrimary};
+          &:hover {
+            color: ${colorLight.colorTextPrimary}aa;
+          }
+        }
+      }
+
+      .home-art figure {
+        background-color: transparent;
+        border: .4rem solid transparent;
       }
     }
     nav span, .btn-svg {
