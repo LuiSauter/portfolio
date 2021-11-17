@@ -23,7 +23,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .dark {
-    background-color: ${colorDark.colorPrimary} ;
+    transition: background .4s ease-in-out;
+    background-color: ${colorDark.colorPrimary};
+    header {
+      /* background-color: ${colorDark.colorPrimary}aa; */
+      backdrop-filter: blur(3.5px);
+      h1:hover {
+        transition: border-bottom .3s ease-out;
+        border-bottom: 1px solid ${colorDark.colorTextPrimary};
+      }
+    }
     .card-background {
       background-color: ${colorDark.colorSecondary}
     }
@@ -37,15 +46,25 @@ export const GlobalStyle = createGlobalStyle`
     .text-yellow {
       color: ${colorDark.colorTextThird};
     }
-
     header button svg {
       color: ${colorDark.colorTextPrimary};
     }
-
-    .border-color {
-      border: 2px solid ${colorDark.colorTextThird};
+    section {
+      .border-color {
+        border: 2px solid ${colorDark.colorTextThird};
+      }
+      button {
+        background-color: ${colorDark.colorTextThird}
+      }
     }
-
+    nav span, .btn-svg {
+      transition: transform .3s;
+      &:hover {
+        outline: 1 solid ${colorDark.colorTextPrimary};
+        outline-offset: -1px;
+        transform: translateY(10%);
+      }
+    }
     .current {
       .btn-svg, span {
         background-color: ${colorDark.colorTextPrimary};
@@ -58,8 +77,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .light {
-    transition: background .3s;
+    transition: background .4s ease-in-out;
     background-color: ${colorLight.colorPrimary};
+    header {
+      /* background-color: ${colorLight.colorPrimary}aa; */
+      backdrop-filter: blur(3px);
+      h1:hover {
+        transition: border-bottom .3s ease-out;
+        border-bottom: 1px solid ${colorLight.colorSecondary};
+      }
+    }
     .card-background {
       background-color: ${colorLight.colorSecondary}
     }
@@ -73,13 +100,25 @@ export const GlobalStyle = createGlobalStyle`
     .text-yellow {
       color: ${colorLight.colorTextThird};
     }
-
     header button svg {
       color: ${colorLight.colorTextPrimary};
     }
-
-    .border-color {
-      border: 2px solid ${colorLight.colorTextThird};
+    section {
+      .border-color {
+        border: 2px solid ${colorLight.colorSecondary};
+      }
+      button {
+        background-color: ${colorLight.colorSecondary};
+        color: ${colorLight.colorPrimary}
+      }
+    }
+    nav span, .btn-svg {
+      transition: transform .3s;
+      &:hover {
+        outline: 1px solid ${colorLight.colorTextPrimary};
+        outline-offset: -1px;
+        transform: translateY(10%);
+      }
     }
     .current {
       span, .btn-svg {
