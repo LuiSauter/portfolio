@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { useDarkMode } from "../hooks/useDarkMode";
 import { colorDark, colorLight } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
@@ -23,10 +24,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .dark {
-    transition: background .4s ease-in-out;
     background-color: ${colorDark.colorPrimary};
     header {
-      /* background-color: ${colorDark.colorPrimary}aa; */
       backdrop-filter: blur(3.5px);
       h1:hover {
         transition: border-bottom .3s ease-out;
@@ -46,6 +45,12 @@ export const GlobalStyle = createGlobalStyle`
     .text-yellow {
       color: ${colorDark.colorTextThird};
     }
+    .card-sumary {
+      background-color: ${colorDark.colorSecondary};
+      &:hover {
+        background-color: ${colorDark.colorSecondary}aa;
+      }
+    }
     header button svg {
       color: ${colorDark.colorTextPrimary};
     }
@@ -56,10 +61,10 @@ export const GlobalStyle = createGlobalStyle`
       button {
         background-color: ${colorDark.colorTextThird};
       }
-      .home-head {
-        svg {
-          color: ${colorDark.colorTextPrimary};
-          &:hover {
+      .social-network a {
+        color: ${colorDark.colorTextPrimary};
+        &:hover {
+          svg {
             color: ${colorDark.colorTextSecondary};
           }
         }
@@ -89,7 +94,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .light {
-    transition: background .4s ease-in-out;
+    transition: background .3s ease-in;
     background-color: ${colorLight.colorPrimary};
     color: ${colorLight.colorTextPrimary};
     header {
@@ -111,6 +116,12 @@ export const GlobalStyle = createGlobalStyle`
     .text-yellow {
       color: ${colorLight.colorTextThird};
     }
+    .card-sumary {
+      border: 1px solid #ccc;
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
     header button svg {
       color: ${colorLight.colorTextPrimary};
     }
@@ -125,15 +136,14 @@ export const GlobalStyle = createGlobalStyle`
         color: ${colorLight.colorPrimary};
         user-select: none;
       }
-      .home-head {
-        svg {
-          color: ${colorLight.colorTextPrimary};
-          &:hover {
+      .social-network a {
+        color: ${colorLight.colorTextPrimary};
+        &:hover {
+          svg {
             color: ${colorLight.colorTextPrimary}aa;
           }
         }
       }
-
       .home-art figure {
         background-color: transparent;
         border: .4rem solid transparent;
