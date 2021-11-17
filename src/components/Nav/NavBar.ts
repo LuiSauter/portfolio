@@ -15,7 +15,7 @@ export const NavBar = styled.header`
     text-decoration: none;
   }
   h1 {
-    font-size: 1.13rem;
+    font-size: 1.4rem;
     border: 1px solid transparent;
   }
   nav {
