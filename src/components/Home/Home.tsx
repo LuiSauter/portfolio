@@ -7,15 +7,28 @@ import { HomeContainer } from './HomeContainer'
 export const Home = (): JSX.Element => {
   return (
     <HomeContainer>
-      <figure>
-        <Image src='/sauterdev.jpg' alt='sauterdev' width={150} height={150} />
-      </figure>
-      <span className='text-primary'>Sauterdev</span>
-      <div></div>
-      <h1 className='text-secondary'>
-        Apasionado de la tecnología, trabajador, perfeccionista, amante del
-        Open-Source y del trabajo en equipo.
-      </h1>
+      <article>
+        <div className='home-head'>
+          <h1 className='text-secondary'>
+            Apasionado de la tecnología, trabajador perfeccionista, amante del
+            Open-Source y del trabajo en equipo.
+          </h1>
+          <button onClick={() => console.log('Hola bobo!')}>FrontEnd Developer</button>
+        </div>
+        <div className='home-art'>
+          <figure>
+            <Image
+              src='/sauterdev.jpg'
+              alt='sauterdev'
+              width={200}
+              height={200}
+              title='Luis G. Janco'
+            />
+          </figure>
+          <span className='text-primary'>Sauterdev</span>
+          <div></div>
+        </div>
+      </article>
       <ul>
         {skills.map((skill: string, index: number) => (
           <Tag key={index} text={skill} />
