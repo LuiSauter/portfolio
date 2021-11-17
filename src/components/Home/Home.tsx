@@ -1,13 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import skills from '../../assets/data/skills'
 import { Tag } from '../Tag/Tag'
 import { HomeContainer } from './HomeContainer'
-import { Linkedin } from '../../assets/icons/LinkedinIcon'
-import { GithubIcon } from '../../assets/icons/GithubIcon'
-import { TwitterIcon } from '../../assets/icons/TwitterIcon'
+import { SocialNetwork } from '../SocialNetwork/SocialNetwork'
+import { Sumary } from '../Sumary/Sumary'
 
 export const Home = (): JSX.Element => {
   return (
@@ -21,15 +19,7 @@ export const Home = (): JSX.Element => {
           <button onClick={() => console.log('Hola bobo!')}>
             FrontEnd Developer
           </button>
-          <div>
-            <Link href='https://www.linkedin.com/in/luis-gabriel-janco/'>
-              <a target='_blank'>
-                <Linkedin />
-              </a>
-            </Link>
-            <GithubIcon />
-            <TwitterIcon />
-          </div>
+          <SocialNetwork />
         </div>
         <div className='home-art'>
           <figure>
@@ -39,16 +29,22 @@ export const Home = (): JSX.Element => {
               width={200}
               height={200}
               title='Luis G. Janco'
+              priority
             />
           </figure>
           <span className='text-primary'>Sauterdev</span>
         </div>
       </article>
-      <ul>
-        {skills.map((skill: string, index: number) => (
-          <Tag key={index} text={skill} />
-        ))}
-      </ul>
+      <div className='skills-sumary'>
+        <h3>Skills</h3>
+        <ul>
+          {skills.map((skill: string, index: number) => (
+            <Tag key={index} text={skill} />
+          ))}
+        </ul>
+        <h3>Sumary</h3>
+        <Sumary />
+      </div>
     </HomeContainer>
   )
 }
