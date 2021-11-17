@@ -8,8 +8,6 @@ export const HomeContainer = styled.section`
   min-height: 70vh;
   margin: auto;
   article {
-    /* display: flex; */
-    /* flex-direction: column; */
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
@@ -24,7 +22,7 @@ export const HomeContainer = styled.section`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      h1 {
+      h2 {
         text-align: center;
         font-size: 1rem;
         max-width: 400px;
@@ -40,6 +38,12 @@ export const HomeContainer = styled.section`
         margin-top: 1rem;
         border-radius: 2rem;
       }
+      svg {
+        width: 26px;
+        height: 26px;
+        margin: 1rem 0.8rem 0 0.8rem;
+        cursor: pointer;
+      }
     }
     .home-art {
       display: flex;
@@ -47,7 +51,11 @@ export const HomeContainer = styled.section`
       justify-content: center;
       align-items: center;
       figure {
+        user-select: none;
+        display: flex;
+        border-radius: 50%;
         margin-bottom: 1rem;
+        padding: 0.5rem;
         img {
           border-radius: 50%;
         }
@@ -63,11 +71,11 @@ export const HomeContainer = styled.section`
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 1rem 1rem 0 1rem;
+    padding: 0rem 1rem 0 1rem;
     li {
       display: inline-block;
       list-style: none;
-      font-size: .9rem;
+      font-size: 0.9rem;
       font-weight: 600;
       margin-right: 1rem;
       margin-bottom: 0.8rem;
@@ -78,7 +86,6 @@ export const HomeContainer = styled.section`
   @media screen and (min-width: ${breackpoints.laptop}) {
     width: 80%;
     article {
-      /* flex-direction: row; */
       grid-template-columns: 1fr 1fr;
       .home-art {
         grid-column: 2 / span 1;
