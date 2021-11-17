@@ -11,7 +11,7 @@ export const Nav = () => {
   return (
     <NavBar>
       <Link href='/'>
-        <a className='text-primary'>
+        <a className='text-primary underlined'>
           <h1>Luis G. Janco</h1>
         </a>
       </Link>

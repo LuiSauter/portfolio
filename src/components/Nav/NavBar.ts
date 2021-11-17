@@ -2,16 +2,21 @@ import styled from "styled-components";
 import { breackpoints } from "../../styles/breackpoints";
 
 export const NavBar = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem 0;
+  padding: 1.8rem;
+  width: 100%;
   a {
     text-decoration: none;
   }
   h1 {
     font-size: 1.13rem;
+    border: 1px solid transparent;
   }
   nav {
     display: flex;
@@ -40,7 +45,7 @@ export const NavBar = styled.header`
   }
 
   @media screen and (max-width: ${breackpoints.laptop}) {
-    padding: 1rem 0;
+    padding: .8rem;
     h1 {
       font-size: 1.3rem;
       content: 'hola';
