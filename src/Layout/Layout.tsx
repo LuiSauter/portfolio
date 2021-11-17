@@ -17,11 +17,9 @@ export const Layout = ({children}: Props) => {
           content='Portfolio frontend developer Reactjs, Nextjs, typescript, Javascript '
         />
       </Head>
-      <LayoutStyle>
-        <Nav />
-        {children}
-        {/* footer */}
-      </LayoutStyle>
+      <Nav />
+      <LayoutStyle>{children}</LayoutStyle>
+      {/* footer */}
     </>
   )
 }
