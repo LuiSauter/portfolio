@@ -1,11 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-
-import skills from '../../assets/data/skills'
-import { Tag } from '../Tag/Tag'
 import { HomeContainer } from './HomeContainer'
 import { SocialNetwork } from '../SocialNetwork/SocialNetwork'
 import { Sumary } from '../Sumary/Sumary'
+import { SkillsContainer } from '../Skills/SkillsContainer'
 
 export const Home = (): JSX.Element => {
   return (
@@ -36,13 +34,9 @@ export const Home = (): JSX.Element => {
         </div>
       </article>
       <div className='skills-sumary'>
-        <h3>Skills</h3>
-        <ul>
-          {skills.map((skill: string, index: number) => (
-            <Tag key={index} text={skill} />
-          ))}
-        </ul>
-        <h3>Sumary</h3>
+        <h3>Habilidades</h3>
+        <SkillsContainer />
+        <h3>Resumen</h3>
         <Sumary />
       </div>
     </HomeContainer>

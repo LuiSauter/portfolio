@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { breackpoints } from "../../styles/breackpoints";
+import { colorDark } from "../../styles/theme";
 export const HomeContainer = styled.section`
   display: grid;
   justify-content: center;
@@ -61,30 +62,14 @@ export const HomeContainer = styled.section`
     }
   }
   h3 {
-    margin: 1.5rem;
+    margin: 1.5rem 0;
+    font-weight: 500;
+    font-size: 1.8rem;
   }
   .skills-sumary {
     display: grid;
-    place-content: center;
-    place-items: center;
     min-height: 90vh;
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 0rem 1rem 0 1rem;
-      li {
-        display: inline-block;
-        list-style: none;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-right: 1rem;
-        margin-bottom: 0.8rem;
-        border-radius: 1rem;
-        padding: 0.4rem 0.5rem;
-      }
-    }
+    width: 100%;
   }
   @media screen and (min-width: ${breackpoints.laptop}) {
     width: 70%;
