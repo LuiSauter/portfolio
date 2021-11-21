@@ -4,6 +4,10 @@ import { CoffeIcon } from '../../assets/icons/CoffeIcon'
 import { SumaryContainer } from './SumaryContainer'
 
 export const Sumary = () => {
+  const counter = Date.now()
+  const day = Number(new Date(counter - 1625358629161)) / 100000000
+  const dayFormat = Math.round(day * 8)
+  const coffeeNumber = new Intl.NumberFormat('en').format(dayFormat)
   return (
     <SumaryContainer>
       <article className='card-sumary'>
@@ -18,7 +22,7 @@ export const Sumary = () => {
           <CoffeIcon />
         </figure>
         <h4>Café consumido</h4>
-        <span>1286</span>
+        <span>{coffeeNumber}</span>
       </article>
     </SumaryContainer>
   )
