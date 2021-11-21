@@ -10,15 +10,16 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   #__next {
-    min-height: 100vh;
+    /* min-height: 100%; */
   }
   html {
-    min-height: 100vh;
+    min-height: 100%;
     position: relative;
   }
   body {
-    position: relative;
-    min-height: 100vh;
+    /* position: relative; */
+    /* min-height: 100vh; */
+    margin-bottom: 80px;
     font-family: Matter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     overflow-x: hidden;
   }
@@ -26,11 +27,15 @@ export const GlobalStyle = createGlobalStyle`
   .dark {
     background-color: ${colorDark.colorPrimary};
     header {
-      backdrop-filter: blur(3.5px);
+      background-color: ${colorDark.colorPrimary}bb;
+      backdrop-filter: blur(5px);
       h1:hover {
         transition: border-bottom .3s ease-out;
         border-bottom: 1px solid ${colorDark.colorTextPrimary};
       }
+    }
+    li {
+      user-select: none;
     }
     .card-background {
       background-color: ${colorDark.colorSecondary}
@@ -45,8 +50,9 @@ export const GlobalStyle = createGlobalStyle`
     .text-yellow {
       color: ${colorDark.colorTextThird};
     }
-    .card-sumary {
+    .card-sumary, li {
       background-color: ${colorDark.colorSecondary};
+      border: 1px solid ${colorDark.colorPrimary};
       &:hover {
         background-color: ${colorDark.colorSecondary}aa;
       }
@@ -91,18 +97,27 @@ export const GlobalStyle = createGlobalStyle`
         color: ${colorDark.colorPrimary};
       }
     }
+    .icons {
+      svg {
+        color: ${colorDark.colorTextPrimary};
+      }
+    }
   }
 
   .light {
-    transition: background .3s ease-in;
     background-color: ${colorLight.colorPrimary};
     color: ${colorLight.colorTextPrimary};
     header {
-      backdrop-filter: blur(3px);
+      background-color: ${colorLight.colorPrimary}bb;
+      backdrop-filter: blur(5px);
       h1:hover {
         transition: border-bottom .3s ease-out;
         border-bottom: 1px solid ${colorLight.colorSecondary};
       }
+    }
+    li {
+      border: none;
+      user-select: none;
     }
     .card-background {
       background-color: ${colorLight.colorSecondary}
@@ -116,7 +131,7 @@ export const GlobalStyle = createGlobalStyle`
     .text-yellow {
       color: ${colorLight.colorTextThird};
     }
-    .card-sumary {
+    .card-sumary, li {
       border: 1px solid #ccc;
       &:hover {
         background-color: #eaeaea;
@@ -164,6 +179,11 @@ export const GlobalStyle = createGlobalStyle`
       }
       svg {
         color: ${colorLight.colorPrimary};
+      }
+    }
+    .icons {
+      svg {
+        color: ${colorLight.colorTextPrimary};
       }
     }
   }

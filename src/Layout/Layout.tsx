@@ -2,6 +2,7 @@ import React from 'react'
 import { Nav } from '../components/Nav/Nav'
 import { LayoutStyle } from './LayoutStyle'
 import Head from 'next/head'
+import { Footer } from '../components/Footer/Footer'
 
 interface Props {
   children: JSX.Element | JSX.Element[]
@@ -19,7 +20,7 @@ export const Layout = ({children}: Props) => {
       </Head>
       <Nav />
       <LayoutStyle>{children}</LayoutStyle>
-      {/* footer */}
+      <Footer />
     </>
   )
 }
