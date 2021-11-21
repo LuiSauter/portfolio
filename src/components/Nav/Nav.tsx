@@ -16,9 +16,9 @@ export const Nav = () => {
         </a>
       </Link>
       <nav>
-        <NavButton text='Experiencia' url={hrefs.EXPERIENCE_HREF}>
+        {/* <NavButton text='Experiencia' url={hrefs.EXPERIENCE_HREF}>
           <ExperienceIcon className='text-secondary' />
-        </NavButton>
+        </NavButton> */}
         <NavButton text='Proyectos' url={hrefs.PROJECTS_HREF}>
           <ProjectsIcon className='text-secondary' />
         </NavButton>
