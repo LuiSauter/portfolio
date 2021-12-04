@@ -4,7 +4,7 @@ import { HomeContainer } from './HomeContainer'
 import { SocialNetwork } from '../SocialNetwork/SocialNetwork'
 import { Sumary } from '../Sumary/Sumary'
 import { SkillsContainer } from '../Skills/SkillsContainer'
-
+import { clip } from '../../assets/icons'
 export const Home = (): JSX.Element => {
   return (
     <HomeContainer>
@@ -34,9 +34,15 @@ export const Home = (): JSX.Element => {
         </div>
       </article>
       <div className='skills-sumary'>
-        <h3>Habilidades</h3>
+        <h3 id='skills'>
+          <a href='#skills'>{clip}</a>
+          Habilidades
+        </h3>
         <SkillsContainer />
-        <h3>Resumen</h3>
+        <h3 id='resume'>
+          <a href='#resume'>{clip}</a>
+          Resumen
+        </h3>
         <Sumary />
       </div>
     </HomeContainer>

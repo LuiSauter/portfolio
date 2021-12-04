@@ -5,6 +5,8 @@ module.exports = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   domains: [
-    'localhost'
+    'localhost',
+    'https://sauterdev.vercel.app',
+    '192.168.0.10:3000'
   ]
 }
