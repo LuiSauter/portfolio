@@ -70,6 +70,22 @@ export const HomeContainer = styled.section`
     display: grid;
     min-height: 90vh;
     width: 100%;
+    h3 {
+      margin: 1.5rem -1.5rem;
+      a {
+        color: inherit;
+      }
+      .clip {
+        width: 1.4rem;
+        color: inherit;
+        opacity: 0;
+      }
+      &:hover {
+        .clip {
+          opacity: 1;
+        }
+      }
+    }
   }
   @media screen and (min-width: ${breackpoints.laptop}) {
     width: 70%;
@@ -89,6 +105,11 @@ export const HomeContainer = styled.section`
     width: 100%;
     ul {
       width: 100%;
+    }
+    .skills-sumary {
+      h3 {
+        margin: 1.5rem 0;
+      }
     }
   }
 `

@@ -3,13 +3,13 @@ import { breackpoints } from "../../styles/breackpoints";
 
 export const NavBar = styled.header`
   position: sticky;
-  top: 0;
+  top: -1rem;
   z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem;
+  padding: 1.7rem 1.7rem .7rem 1.7rem;
   width: 100%;
   a {
     text-decoration: none;
@@ -17,13 +17,18 @@ export const NavBar = styled.header`
   h1 {
     font-size: 1.4rem;
     border: 1px solid transparent;
+    width: 150px;
+    text-align: center;
+    margin-right: 1rem;
+    /* width: 100%; */
   }
   nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.13rem;
+    width: 100%;
     button {
       cursor: pointer;
       position: relative;
@@ -114,7 +119,7 @@ export const NavBar = styled.header`
   }
 
   @media screen and (max-width: ${breackpoints.laptop}) {
-    padding: 0.8rem;
+    padding: 1.5rem 0.8rem 0.5rem 0.8rem;
     h1 {
       font-size: 1.3rem;
       content: 'hola';
