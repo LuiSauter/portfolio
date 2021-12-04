@@ -57,6 +57,16 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${colorDark.colorSecondary}aa;
       }
     }
+    .border-color-skills {
+      border: 1px solid ${colorDark.colorTextThird};
+    }
+    .card-project {
+      background-color: ${colorDark.colorSecondary};
+      border: 1px solid ${colorDark.colorPrimary};
+      &:hover {
+        background-color: ${colorDark.colorSecondary}aa;
+      }
+    }
     header button svg {
       color: ${colorDark.colorTextPrimary};
     }
@@ -132,6 +142,16 @@ export const GlobalStyle = createGlobalStyle`
       color: ${colorLight.colorTextThird};
     }
     .card-sumary, li {
+      border: 1px solid #ccc;
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+    .border-color-skills {
+      border: 1px solid ${colorLight.colorTextPrimary};
+      user-select: none;
+    }
+    .card-project {
       border: 1px solid #ccc;
       &:hover {
         background-color: #eaeaea;
