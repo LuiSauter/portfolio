@@ -7,12 +7,13 @@ import projects from '../assets/data/projects'
 import { ProjectItem } from '../components/Project/ProjectItem'
 import { ProjectContainer } from '../components/Project/style'
 import usePaginationArray from '../hooks/usePaginationArray'
+import styled from 'styled-components'
 
 const Projects: NextPage = (): JSX.Element => {
   const projectsReverse = [...projects].reverse()
   const { dataDisplayed, next, currentPage, maxPage } = usePaginationArray(
     projectsReverse,
-    3
+    4
   )
   return (
     <>
@@ -24,11 +25,11 @@ const Projects: NextPage = (): JSX.Element => {
         />
         <link rel='canonical' href='https://sauterdev.vercel.app/projects' />
       </Head>
-      <h1>Portafolio</h1>
-      <small>
+      <Titleh2>Portafolio</Titleh2>
+      <p>
         Proyectos educativos, personales y profesionales con los que me sigo
-        formando dia a dia
-      </small>
+        formando dia a dia.
+      </p>
       <ProjectContainer>
         <InfiniteScroll
           dataLength={dataDisplayed.length}
@@ -59,3 +60,7 @@ const Projects: NextPage = (): JSX.Element => {
 }
 
 export default Projects
+
+const Titleh2 = styled.h2`
+  font-size: 1.8rem;
+`

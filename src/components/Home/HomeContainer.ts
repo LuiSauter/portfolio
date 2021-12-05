@@ -15,6 +15,7 @@ export const HomeContainer = styled.section`
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    position: relative;
     .home-art {
       grid-row: 1 / span 1;
     }

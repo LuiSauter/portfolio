@@ -9,7 +9,7 @@ const technologies = {
   mongoDB: 'MongoDB',
   mongoose: 'MongooseJS',
   firebase: 'Firebase',
-  styledComponent: 'Styled Component',
+  styledComponent: 'StyledComponent',
   tailwindcss: 'Tailwind CSS',
   pug: 'Pug',
   html: 'HTML5',
