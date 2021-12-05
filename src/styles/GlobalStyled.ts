@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { useDarkMode } from "../hooks/useDarkMode";
 import { colorDark, colorLight } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
@@ -8,17 +7,15 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     outline: none;
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   #__next {
-    /* min-height: 100%; */
   }
   html {
     min-height: 100%;
     position: relative;
   }
   body {
-    /* position: relative; */
-    /* min-height: 100vh; */
     margin-bottom: 80px;
     font-family: Matter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     overflow-x: hidden;
@@ -58,13 +55,26 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
     .border-color-skills {
-      border: 1px solid ${colorDark.colorTextThird};
+      border: 1px solid transparent;
+      background-color: ${colorDark.colorTextSecondary}22;
+      color: ${colorDark.colorTextPrimary};
+      &:hover {
+        background-color: ${colorDark.colorTextSecondary}22;
+      }
     }
     .card-project {
       background-color: ${colorDark.colorSecondary};
       border: 1px solid ${colorDark.colorPrimary};
       &:hover {
         background-color: ${colorDark.colorSecondary}aa;
+      }
+      article {
+        p {
+          color: ${colorDark.colorTextPrimary};
+        }
+      }
+      p {
+        color: ${colorDark.colorTextSecondary};
       }
     }
     header button svg {
@@ -148,11 +158,23 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
     .border-color-skills {
-      border: 1px solid ${colorLight.colorTextPrimary};
+      border: none;
+      /* border: 1px solid ${colorLight.colorTextPrimary}; */
+      background-color: ${colorDark.colorTextSecondary}55;
+      color: ${colorLight.colorTextSecondary};
       user-select: none;
+      &:hover {
+        background-color: ${colorDark.colorTextSecondary}55;
+      }
     }
     .card-project {
       border: 1px solid #ccc;
+      p {
+        color: ${colorLight.colorTextSecondary};
+      }
+      article p {
+        color: ${colorLight.colorTextPrimary};
+      }
       &:hover {
         background-color: #eaeaea;
       }
