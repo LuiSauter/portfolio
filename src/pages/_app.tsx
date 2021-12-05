@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import { DarkStateProvider } from '../context/DarkStateProvider'
 import { Layout } from '../Layout/Layout'
 import { GlobalStyle } from '../styles/GlobalStyled'

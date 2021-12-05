@@ -4,7 +4,8 @@ import { HomeContainer } from './HomeContainer'
 import { SocialNetwork } from '../SocialNetwork/SocialNetwork'
 import { Sumary } from '../Sumary/Sumary'
 import { SkillsContainer } from '../Skills/SkillsContainer'
-import { clip } from '../../assets/icons'
+import { clip, downArrow } from '../../assets/icons'
+import { DownArrow } from './DownArrow'
 export const Home = (): JSX.Element => {
   return (
     <HomeContainer>
@@ -27,11 +28,12 @@ export const Home = (): JSX.Element => {
               width={200}
               height={200}
               title='Luis G. Janco'
-              priority
+              priority={true}
             />
           </figure>
           <span className='text-primary'>Sauterdev</span>
         </div>
+        <DownArrow href='#skills'>{downArrow}</DownArrow>
       </article>
       <div className='skills-sumary'>
         <h3 id='skills'>
