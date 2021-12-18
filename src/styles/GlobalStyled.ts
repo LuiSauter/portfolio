@@ -63,18 +63,20 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
     .card-project {
-      background-color: ${colorDark.colorSecondary};
-      border: 1px solid ${colorDark.colorPrimary};
-      &:hover {
-        background-color: ${colorDark.colorSecondary}aa;
-      }
-      article {
-        p {
-          color: ${colorDark.colorTextPrimary};
+      &__description {
+        @media screen and (min-width: 768px) {
+          background-color: ${colorDark.colorSecondary};
+          transition: background-color 400ms;
+          &:hover {
+            background-color: ${colorDark.colorSecondary}aa;
+          }
         }
       }
-      p {
-        color: ${colorDark.colorTextSecondary};
+      @media screen and (min-width: 768px) {
+        transition: transform 500ms;
+        &:hover {
+          transform: scale(1.03);
+        }
       }
     }
     header button svg {
@@ -168,16 +170,21 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
     .card-project {
-      border: 1px solid #ccc;
-      p {
-        color: ${colorLight.colorTextSecondary};
+      &__description {
+        @media screen and (min-width: 768px) {
+          transition: background-color 400ms;
+          &:hover {
+            background-color: #e0e0e0;
+          }
+        }
       }
-      article p {
-        color: ${colorLight.colorTextPrimary};
+      @media screen and (min-width: 768px) {
+        transition: transform 500ms;
+        &:hover {
+          transform: scale(1.03);
+        }
       }
-      &:hover {
-        background-color: #eaeaea;
-      }
+
     }
     header button svg {
       color: ${colorLight.colorTextPrimary};
