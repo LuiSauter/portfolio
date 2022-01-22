@@ -6,6 +6,7 @@ export const FooterStyle = styled.div`
   text-align: center;
   width: 100%;
   padding: 2rem;
+  z-index: 0;
   .icons {
     display: flex;
     justify-content: center;

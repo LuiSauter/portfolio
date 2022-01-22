@@ -6,4 +6,5 @@ export const LayoutStyle = styled.main`
   justify-content: center;
   margin: auto;
   width: 90%;
+  height: 100%;
 `

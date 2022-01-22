@@ -3,13 +3,13 @@ import { breackpoints } from "../../styles/breackpoints";
 
 export const NavBar = styled.header`
   position: sticky;
-  top: -1rem;
+  top: 0;
   z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1.7rem 1.7rem .7rem 1.7rem;
+  padding: 1rem 1.7rem;
   width: 100%;
   a {
     text-decoration: none;
