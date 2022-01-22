@@ -30,7 +30,6 @@ export const ProjectItem = ({
   title,
   url,
 }: Project) => {
-  console.log(tags)
   return (
     <article className='card-item'>
       <img className='card-item__img' src={image} alt={title} />
