@@ -1,21 +1,15 @@
 import React from 'react'
 import Head from 'next/head'
 import type { NextPage } from 'next'
-import InfiniteScroll from 'react-infinite-scroll-component'
 import Image from 'next/image'
 
 import projects from '../assets/data/projects'
 import { ProjectItem } from '../components/Project/ProjectItem'
 import { ProjectContainer } from '../components/Project/style'
-import usePaginationArray from '../hooks/usePaginationArray'
 import styled from 'styled-components'
 
 const Projects: NextPage = (): JSX.Element => {
   const projectsReverse = [...projects].reverse()
-  const { dataDisplayed, next, currentPage, maxPage } = usePaginationArray(
-    projectsReverse,
-    4
-  )
   return (
     <>
       <Head>
@@ -26,34 +20,24 @@ const Projects: NextPage = (): JSX.Element => {
         />
         <link rel='canonical' href='https://sauterdev.vercel.app/projects' />
       </Head>
-      <TitleProjects>
-        <Image
-          src='/images/portfolio-projects.svg'
-          width={100}
-          height={100}
-          title='Luis G. Janco'
-          priority={true}
-          aria-label={'xd'}
-          alt={'xd'}
-        />
-        <h2>
-          Proyectos educativos, personales y profesionales con los que me sigo
-          formando dia a dia.
-        </h2>
-      </TitleProjects>
-      <ProjectContainer>
-        <InfiniteScroll
-          dataLength={dataDisplayed.length}
-          next={next}
-          hasMore={currentPage < maxPage}
-          loader={<h4>...Loading</h4>}
-          scrollThreshold={0.7}
-          style={{
-            width: '100%',
-            overflow: 'hidden',
-          }}
-        >
-          {dataDisplayed.map((project: Project, index) => (
+      <Project>
+        <ProjectContainer>
+          <TitleProjects>
+            <Image
+              src='/images/portfolio-projects.svg'
+              width={100}
+              height={100}
+              title='Luis G. Janco'
+              priority={true}
+              aria-label={'xd'}
+              alt={'xd'}
+            />
+            <h2>
+              Proyectos educativos, personales y profesionales con los que me
+              sigo formando dia a dia.
+            </h2>
+          </TitleProjects>
+          {projectsReverse.map((project: Project, index) => (
             <ProjectItem
               key={index}
               title={project.title}
@@ -64,8 +48,8 @@ const Projects: NextPage = (): JSX.Element => {
               tags={project.tags}
             />
           ))}
-        </InfiniteScroll>
-      </ProjectContainer>
+        </ProjectContainer>
+      </Project>
     </>
   )
 }
@@ -73,15 +57,15 @@ const Projects: NextPage = (): JSX.Element => {
 export default Projects
 
 const TitleProjects = styled.div`
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
-  padding: 0 1vw 2rem;
-  position: relative;
+  flex-shrink: 0;
+  height: 100%;
+  padding: 2rem;
   width: 100%;
-  margin: auto;
   h2 {
     text-align: center;
     font-size: 1.5rem;
@@ -92,12 +76,13 @@ const TitleProjects = styled.div`
     img {
       min-width: 300px;
       max-width: 500px;
-      filter: drop-shadow(10px 5px 0.2rem #27272773);
+      /* filter: drop-shadow(10px 5px 0.2rem #27272773); */
       /* box-shadow: 0 20px 25px -5px #000000aa; */
     }
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    height: 100vh;
     span {
       width: 100%;
       img {
@@ -110,4 +95,8 @@ const TitleProjects = styled.div`
       font-size: 2rem;
     }
   }
+`
+
+const Project = styled.div`
+  position: relative;
 `

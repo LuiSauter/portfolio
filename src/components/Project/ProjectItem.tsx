@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardDescription, CardItemProject, Footer } from './style'
+// import { CardDescription, CardItemProject, Footer } from './style'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -30,56 +30,41 @@ export const ProjectItem = ({
   title,
   url,
 }: Project) => {
+  console.log(tags)
   return (
-    <Link href={url}>
-      <a target='_blank'>
-        <CardItemProject className='card-project'>
-          <CardDescription className='card-project__description'>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <article>
-              {authors.map((author, index) => (
-                <p key={index}>
-                  <Image
-                    alt={author.name}
-                    src={author.image}
-                    width={30}
-                    height={30}
-                  />
-                  <span>{author.name}</span>
-                </p>
-              ))}
-            </article>
-            <Footer>
-              <ul>
-                {tags.map((tag, index) => (
-                  <li className='border-color-skills' key={index}>
-                    <span>{tag}</span>
-                  </li>
-                ))}
-              </ul>
-            </Footer>
-          </CardDescription>
-          <div className='card-project__img'>
-            <Image
-              alt={title}
-              src={image}
-              layout='intrinsic'
-              width={500}
-              height={260}
-              placeholder='blur'
-              blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                shimmer(700, 475)
-              )}`}
-              // loading='lazy'
-              objectFit='cover'
-              objectPosition='top center'
-              aria-label={title}
-              priority={true}
-            />
-          </div>
-        </CardItemProject>
-      </a>
-    </Link>
+    <article className='card-item'>
+      <img className='card-item__img' src={image} alt={title} />
+      <div className='card-item-info'>
+        <Link href={url}>
+          <a
+            title='repository github'
+            target='_blank'
+            className='card-item-info__header'
+          >
+            <h2>{title}</h2>
+          </a>
+        </Link>
+        <ul className='card-item-info__technologies'>
+          {tags.map((tag, index: number) => (
+            <li key={index} title={tag.skill} style={{ color: tag.color }}>
+              {tag.svg}
+            </li>
+          ))}
+        </ul>
+        {authors.map((author, index: number) => (
+          <Link key={index} href='https://github.com/LuiSauter'>
+            <a
+              title='github'
+              target='_blank'
+              className='card-item-info__author'
+            >
+              <img src={author.image} alt={author.name} />
+              <span>{author.name}</span>
+            </a>
+          </Link>
+        ))}
+        <p className='card-item-info__description'>{description}</p>
+      </div>
+    </article>
   )
 }

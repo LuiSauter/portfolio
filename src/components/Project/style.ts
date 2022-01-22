@@ -2,139 +2,107 @@ import styled from "styled-components";
 import { colorDark } from "../../styles/theme";
 
 export const ProjectContainer = styled.section`
-  margin: 2rem 0;
-  min-height: 100vh;
-  margin: 0 -1.1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  .infinite-scroll-component {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 5rem;
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: transform 500ms;
-    }
-  }
-  @media screen and (min-width: 768px) {
-    margin-top: 1rem;
-  }
-`
-export const CardItemProject = styled.article`
-  display: flex;
   flex-direction: column;
-  gap: 0.5em;
-  width: 100%;
-  border-top: 1px solid #a1a1a138;
-  border-bottom: 1px solid #a1a1a138;
-  padding: 1rem 0;
-  position: relative;
-  height: 100%;
-  .card-project__img {
-    position: relative;
-    border: 1px solid transparent;
-    width: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: visible;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  right: 0;
+  user-select: text;
+  .card-item {
+    scroll-snap-align: center;
     display: flex;
-    justify-content: center;
-    span {
-      max-width: 480px;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: auto;
+    /* background-color: #ffaa22; */
+    height: 100vh;
+    width: 100%;
+    &__img {
       height: 100%;
       width: 100%;
-      min-height: 260px;
-      max-height: 480px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
+      overflow: hidden;
+      object-fit: cover;
+      position: absolute;
+      z-index: 0;
+      /* opacity: 90%; */
+      filter: blur(0.5px);
     }
-  }
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-    width: 100%;
-    /* height: 70vh; */
-    .card-project__img {
-      width: 100%;
-      span {
-        width: 100%;
-        border-radius: 1rem;
-        /* box-shadow: 0 20px 25px -5px rgb(0 0 0/0.1),
-          0 8px 10px -6px rgb(0 0 0/0.1); */
-        box-shadow: 0 0px 10px 3px rgb(0 0 0 / 11%),
-          0 0px 20px -50px rgb(0 0 0 / 11%);
-      }
-    }
-  }
-`
 
-export const CardDescription = styled.div`
-  position: relative;
-  padding: 0 1rem;
-  h3 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 0.95rem;
-    padding: 0.7rem 0;
-  }
-  article {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    p {
-      width: 100%;
+    .card-item-info {
+      padding: 1rem 1rem;
+      position: relative;
+      border-radius: 2rem;
+      width: 90%;
+      margin: 0 auto;
+      height: min-content;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      span img {
-        border-radius: 50%;
+      align-items: start;
+      background-color: #0005;
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999999;
+      color: #fff;
+      &__header {
+        z-index: 1;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.3rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &__technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        li {
+          list-style: none;
+          background-color: transparent;
+          border: none;
+          color: #fff;
+          font-size: 1.3rem;
+          display: flex;
+          align-items: center;
+          svg {
+            width: 1.8rem;
+          }
+        }
+      }
+      &__author {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fff;
+        text-decoration: none;
+        span {
+          font-size: 1.5rem;
+          padding-bottom: 0.3rem;
+        }
+        img {
+          border-radius: 100%;
+          height: 40px;
+        }
+      }
+      &__description {
+        font-size: 1.5rem;
       }
     }
-  }
-  @media screen and (min-width: 768px) {
-    display: grid;
-    place-content: center;
-    place-items: center;
-    margin: 0 0 0 2rem;
-    width: 60%;
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 5px 8px 5px rgb(0 0 0 / 8%);
-    p {
-      padding: 0.7rem 1.5rem;
-    }
-  }
-`
-
-export const Footer = styled.footer`
-  ul {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 0.8rem;
-    opacity: 80%;
-    padding: 0 0.5rem 0.5rem;
-    li {
-      font-size: 0.8rem;
-      font-weight: bold;
-      list-style: none;
-      padding: 0.1rem 0.5rem;
-      border-radius: 0.8rem;
-    }
-  }
-  @media screen and (min-width: 768px) {
-    ul {
-      padding: 1rem 0;
-      flex-wrap: wrap;
-      li {
-        padding: 0.1rem 0.5rem;
+    @media screen and (min-width: 560px) {
+      .card-item-info {
+        padding: 2rem 2rem;
+        width: 50vw;
+        height: 50vh;
+        margin-left: auto;
+        margin-right: 2rem;
       }
     }
   }
