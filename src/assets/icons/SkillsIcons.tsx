@@ -534,11 +534,6 @@ export const technologiesIcons = {
     skill: 'Tailwind CSS',
     color: '#0099ff',
   },
-  pug: {
-    svg: <p>Pug</p>,
-    skill: 'Pug',
-    color: '#53312a',
-  },
   graphQL: {
     svg: (
       <img

@@ -36,7 +36,6 @@ export default [
     tags: [
       technologiesIcons.html,
       technologiesIcons.scss,
-      technologiesIcons.pug,
       technologiesIcons.javaScript,
     ],
   },
