@@ -21,6 +21,10 @@ export const Footer = () => {
         <a href='https://github.com/LuiSauter' target='_blank' rel='noreferrer'>
           <GithubIcon />
         </a>
+        <img
+          className='profile-view'
+          src='https://gpvc.arturio.dev/LuiSauter'
+        />
       </div>
     </FooterStyle>
   )

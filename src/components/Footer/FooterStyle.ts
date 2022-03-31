@@ -5,10 +5,11 @@ export const FooterStyle = styled.div`
   bottom: 0;
   text-align: center;
   width: 100%;
-  padding: 2rem;
+  padding: 0.8rem 0.5rem;
   z-index: 0;
   .icons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -31,6 +32,7 @@ export const FooterStyle = styled.div`
       font-size: 1.2rem;
       font-weight: 400;
       margin: 0 10px;
+      white-space: nowrap;
     }
     a {
       display: flex;
@@ -39,6 +41,17 @@ export const FooterStyle = styled.div`
       &:hover {
         color: #00adb5;
       }
+    }
+  }
+  .profile-view {
+    border-radius: 0.4rem;
+    margin-left: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  @media screen and (min-width: 390px) {
+    padding: 1.8rem 0.5rem;
+    .profile-view {
+      margin-top: 0;
     }
   }
 `
