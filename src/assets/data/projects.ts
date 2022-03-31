@@ -124,7 +124,7 @@ export default [
       'Bookend is a web application to share books and it was thanks to the idea that arose when I was looking to carry out fullstack development practices',
     image:
       'https://raw.githubusercontent.com/LuiSauter/bookend/main/public/images/bookend-demo.jpg',
-    url: 'disney-clone',
+    url: 'bookend',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.react,
@@ -135,6 +135,21 @@ export default [
       technologiesIcons.mongoDB,
       technologiesIcons.tailwindcss,
       technologiesIcons.express,
+    ],
+  },
+  {
+    title: 'bookend-android-ios',
+    description:
+      'React Native CLI - This is a cross-platform mobile app of bookend app - free books for everyone 📚',
+    image:
+      'https://raw.githubusercontent.com/LuiSauter/bookend/main/public/images/bookend-demo.jpg',
+    url: 'bookend-android-ios',
+    authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
+    tags: [
+      technologiesIcons.react,
+      technologiesIcons.graphQL,
+      technologiesIcons.mongoose,
+      technologiesIcons.mongoDB,
     ],
   },
 ]
