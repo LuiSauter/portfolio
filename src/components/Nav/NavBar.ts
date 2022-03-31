@@ -17,10 +17,9 @@ export const NavBar = styled.header`
   h1 {
     font-size: 1.4rem;
     border: 1px solid transparent;
-    width: 150px;
     text-align: center;
     margin-right: 1rem;
-    /* width: 100%; */
+    white-space: nowrap;
   }
   nav {
     display: flex;
