@@ -73,21 +73,6 @@ export default [
     ],
   },
   {
-    title: 'DevCoffee',
-    description:
-      'Devcoffe is twitter clone for educational purposes and FUN! :D.',
-    image: '/images/devcoffee.jpg',
-    url: 'devter',
-    authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
-    tags: [
-      technologiesIcons.next,
-      technologiesIcons.javaScript,
-      technologiesIcons.redux,
-      technologiesIcons.scss,
-      technologiesIcons.firebase,
-    ],
-  },
-  {
     title: 'My favorite videos',
     description: 'Web application with react to save your favorite videos! :D.',
     image: '/images/favoritevideos.jpg',
