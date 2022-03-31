@@ -23,7 +23,7 @@ export default [
     title: 'Landing page',
     description: 'Landing page for my github',
     image: '/images/landingpage.jpg',
-    url: 'https://github.com/LuiSauter/landingpage',
+    url: 'landingpage',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [technologiesIcons.html, technologiesIcons.css],
   },
@@ -31,7 +31,7 @@ export default [
     title: 'Gallery',
     description: 'Project made with pure vanila js',
     image: '/images/gallery.jpg',
-    url: 'https://github.com/LuiSauter/gallery',
+    url: 'gallery',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.html,
@@ -44,7 +44,7 @@ export default [
     description:
       'This project is a practice of a full stack bootcamp with technologiesIcons MernStack.',
     image: '/images/noteapp.jpg',
-    url: 'https://github.com/LuiSauter/spa-notes-app',
+    url: 'spa-notes-app',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.javaScript,
@@ -59,7 +59,7 @@ export default [
     title: 'Search Giffs',
     description: 'Online gifs search engine with react and giphy api.',
     image: '/images/gifs.jpg',
-    url: 'https://github.com/LuiSauter/search-gifs',
+    url: 'search-gifs',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.react,
@@ -77,7 +77,7 @@ export default [
     description:
       'Devcoffe is twitter clone for educational purposes and FUN! :D.',
     image: '/images/devcoffee.jpg',
-    url: 'https://github.com/LuiSauter/devter',
+    url: 'devter',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.next,
@@ -91,7 +91,7 @@ export default [
     title: 'My favorite videos',
     description: 'Web application with react to save your favorite videos! :D.',
     image: '/images/favoritevideos.jpg',
-    url: 'https://github.com/LuiSauter/my-favorite-videos',
+    url: 'my-favorite-videos',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.react,
@@ -108,7 +108,7 @@ export default [
     description:
       'Disney clone is a project only for development practices and above all for fun :D.',
     image: '/images/disneyplus.jpg',
-    url: 'https://github.com/LuiSauter/disney-clone',
+    url: 'disney-clone',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.react,
@@ -124,7 +124,7 @@ export default [
       'Bookend is a web application to share books and it was thanks to the idea that arose when I was looking to carry out fullstack development practices',
     image:
       'https://raw.githubusercontent.com/LuiSauter/bookend/main/public/images/bookend-demo.jpg',
-    url: 'https://github.com/LuiSauter/disney-clone',
+    url: 'disney-clone',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       technologiesIcons.react,

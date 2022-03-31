@@ -221,7 +221,7 @@ export const skillIconsData = [
       </svg>
     ),
     skill: 'JavaScript',
-    color: '#efd81d',
+    color: '#f1e05a',
   },
   {
     html: (

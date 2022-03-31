@@ -3,7 +3,7 @@ export const colorDark = {
   colorSecondary: '#2e303a',
   colorTextPrimary: '#ffffff',
   colorTextSecondary: '#a9adc1',
-  colorTextThird: '#fbd644'
+  colorTextThird: '#e0be58'
 }
 
 export const colorLight = {
