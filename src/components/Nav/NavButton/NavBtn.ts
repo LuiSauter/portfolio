@@ -9,7 +9,7 @@ export const NavBtn = styled.div`
     span {
       width: 100%;
       border-radius: .5rem;
-      padding: .4rem .5rem;
+      padding: .2rem .5rem .4rem .5rem;
       font-weight: 500;
     }
 

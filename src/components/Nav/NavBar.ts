@@ -9,7 +9,7 @@ export const NavBar = styled.header`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.7rem;
+  padding: .5rem 1rem;
   width: 100%;
   a {
     text-decoration: none;
@@ -118,7 +118,7 @@ export const NavBar = styled.header`
   }
 
   @media screen and (max-width: ${breackpoints.laptop}) {
-    padding: 1.5rem 0.8rem 0.5rem 0.8rem;
+    /* padding: 1.5rem 0.8rem 0.5rem 0.8rem; */
     h1 {
       font-size: 1.3rem;
       content: 'hola';
