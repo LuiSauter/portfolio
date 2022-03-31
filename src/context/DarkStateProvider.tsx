@@ -11,7 +11,7 @@ export const DarkStateProvider = ({children}: Props): JSX.Element => {
     isDark: true
   }
   const [isDarkMode, setIsDarkMode] = useState(initialState)
-  const {isDark} = isDarkMode
+  const { isDark } = isDarkMode
 
   const setClassesForDarkMode = () => {
     document.body.classList.add('dark')

@@ -1,5 +1,4 @@
 import React from 'react'
-import { technologies } from '../../assets/data/projects'
 import { technologiesIcons } from '../../assets/icons/SkillsIcons'
 import { SkillsStyle } from './SkillsStyle'
 

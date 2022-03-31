@@ -2,6 +2,7 @@ import React from 'react'
 import { BookIcon } from '../../assets/icons/BookIcon'
 import { CoffeIcon } from '../../assets/icons/CoffeIcon'
 import { SumaryContainer } from './SumaryContainer'
+import { technologiesIcons } from '../../assets/icons/SkillsIcons'
 
 export const Sumary = () => {
   const counter = Date.now()
@@ -15,7 +16,7 @@ export const Sumary = () => {
           <BookIcon />
         </figure>
         <h4>Cursos terminados</h4>
-        <span>13</span>
+        <span>{Object.values(technologiesIcons).length}</span>
       </article>
       <article className='card-sumary'>
         <figure>
