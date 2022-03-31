@@ -19,7 +19,7 @@ export const ProjectContainer = styled.section`
     &:hover {
       transform: scale(1.005);
       border: 1px solid #3f464f;
-      transition: all 0.3s ease-out;
+      transition: transform 0.3s ease-out;
     }
 
     &__header {
@@ -42,7 +42,7 @@ export const ProjectContainer = styled.section`
       .visibility {
         border: 1px solid #3f464f;
         width: max-content;
-        padding: 0rem 0.4rem 0.2rem 0.4rem;
+        padding: 0rem 0.4rem 0.1rem 0.4rem;
         border-radius: 0.8rem;
         font-size: 0.8rem;
       }
@@ -77,14 +77,24 @@ export const ProjectContainer = styled.section`
       }
     }
   }
-
-  .current-streak {
-    border: 1px solid #30363d;
+  .stats {
+    width: 100%;
+    max-height: 220px;
+    outline: 1px solid #3f464f;
     border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
-    width: 100%;
-    /* transform: scale(1.02) */
+    .current-streak {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02)
+    }
+    &:hover {
+      transform: scale(1.005);
+      outline: 1px solid #3f464f;
+      transition: all 0.3s ease-out;
+    }
   }
 
   @media screen and (min-width: 768px) {

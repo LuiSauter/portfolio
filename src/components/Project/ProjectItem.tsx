@@ -39,6 +39,7 @@ export const ProjectItem = ({
         <h2>{title}</h2>
         <span className='visibility'>Public</span>
         <img src={`https://badgen.net/github/commits/LuiSauter/${url}`} title={url} />
+        <img src='https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github' />
       </div>
       <p className='card-item__description'>{description}</p>
       <ul className='card-item__tags'>
