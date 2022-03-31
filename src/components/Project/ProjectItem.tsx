@@ -1,7 +1,8 @@
 import React from 'react'
 // import { CardDescription, CardItemProject, Footer } from './style'
-import Image from 'next/image'
-import Link from 'next/link'
+// import Image from 'next/image'
+// import Link from 'next/link'
+import * as icon from '../../assets/icons'
 
 const shimmer = (w: any, h: any) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -30,40 +31,28 @@ export const ProjectItem = ({
   title,
   url,
 }: Project) => {
+  const github = 'https://github.com/LuiSauter/'
   return (
     <article className='card-item'>
-      <img className='card-item__img' src={image} alt={title} />
-      <div className='card-item-info'>
-        <Link href={url}>
-          <a
-            title='repository github'
-            target='_blank'
-            className='card-item-info__header'
-          >
-            <h2>{title}</h2>
-          </a>
-        </Link>
-        <ul className='card-item-info__technologies'>
-          {tags.map((tag, index: number) => (
-            <li key={index} title={tag.skill} style={{ color: tag.color }}>
-              {tag.svg}
-            </li>
-          ))}
-        </ul>
-        {authors.map((author, index: number) => (
-          <Link key={index} href='https://github.com/LuiSauter'>
-            <a
-              title='github'
-              target='_blank'
-              className='card-item-info__author'
-            >
-              <img src={author.image} alt={author.name} />
-              <span>{author.name}</span>
-            </a>
-          </Link>
-        ))}
-        <p className='card-item-info__description'>{description}</p>
+      <div className='card-item__header'>
+        <span className='book'>{icon.book}</span>
+        <h2>{title}</h2>
+        <span className='visibility'>Public</span>
+        <span>
+          <img src={`https://badgen.net/github/commits/LuiSauter/${url}`} />
+        </span>
       </div>
+      <p className='card-item__description'>{description}</p>
+      <ul className='card-item__tags'>
+        {tags.map((tag, index: number) => (
+          <li key={index}>
+            <span className='dot' style={{ color: tag.color }}>
+              •
+            </span>
+            <span className='skill'>{tag.skill}</span>
+          </li>
+        ))}
+      </ul>
     </article>
   )
 }

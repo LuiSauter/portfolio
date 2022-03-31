@@ -7,6 +7,8 @@ import projects from '../assets/data/projects'
 import { ProjectItem } from '../components/Project/ProjectItem'
 import { ProjectContainer } from '../components/Project/style'
 import styled from 'styled-components'
+import { DownArrow } from '../components/Home/DownArrow'
+import { downArrow } from '../assets/icons'
 
 const Projects: NextPage = (): JSX.Element => {
   const projectsReverse = [...projects].reverse()
@@ -20,36 +22,37 @@ const Projects: NextPage = (): JSX.Element => {
         />
         <link rel='canonical' href='https://sauterdev.vercel.app/projects' />
       </Head>
-      <Project>
-        <ProjectContainer>
-          <TitleProjects>
-            <Image
-              src='/images/portfolio-projects.svg'
-              width={100}
-              height={100}
-              title='Luis G. Janco'
-              priority={true}
-              aria-label={'xd'}
-              alt={'xd'}
-            />
-            <h2>
-              Proyectos educativos, personales y profesionales con los que me
-              sigo formando dia a dia.
-            </h2>
-          </TitleProjects>
-          {projectsReverse.map((project: Project, index) => (
-            <ProjectItem
-              key={index}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              url={project.url}
-              authors={project.authors}
-              tags={project.tags}
-            />
-          ))}
-        </ProjectContainer>
-      </Project>
+      <TitleProjects>
+        <Image
+          src='/images/portfolio-projects.svg'
+          width={100}
+          height={100}
+          title='Luis G. Janco'
+          priority={true}
+          aria-label={'xd'}
+          alt={'xd'}
+        />
+        <h2>
+          Proyectos educativos, personales y profesionales con los que sigo
+          formándome día a día.
+        </h2>
+      </TitleProjects>
+      <div style={{ position: 'relative' }}>
+        <DownArrow href='#projects'>{downArrow}</DownArrow>
+      </div>
+      <ProjectContainer id='projects'>
+        {projectsReverse.map((project: Project, index) => (
+          <ProjectItem
+            key={index}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            url={project.url}
+            authors={project.authors}
+            tags={project.tags}
+          />
+        ))}
+      </ProjectContainer>
     </>
   )
 }
@@ -76,13 +79,11 @@ const TitleProjects = styled.div`
     img {
       min-width: 300px;
       max-width: 500px;
-      /* filter: drop-shadow(10px 5px 0.2rem #27272773); */
-      /* box-shadow: 0 20px 25px -5px #000000aa; */
     }
   }
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    height: 100vh;
+    height: 90vh;
     span {
       width: 100%;
       img {
@@ -95,8 +96,4 @@ const TitleProjects = styled.div`
       font-size: 2rem;
     }
   }
-`
-
-const Project = styled.div`
-  position: relative;
 `
