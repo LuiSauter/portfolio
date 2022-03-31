@@ -37,7 +37,7 @@ const Projects: NextPage = (): JSX.Element => {
           formándome día a día.
         </h2>
       </TitleProjects>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', transform: 'translateX(-2%)' }}>
         <DownArrow href='#projects'>{downArrow}</DownArrow>
       </div>
       <ProjectContainer id='projects'>
@@ -52,6 +52,15 @@ const Projects: NextPage = (): JSX.Element => {
             tags={project.tags}
           />
         ))}
+        {projectsReverse.length % 2 !== 0 && <br />}
+        <img
+          className='current-streak'
+          src='https://github-readme-streak-stats.herokuapp.com/?user=LuiSauter&theme=blue-green'
+        />
+        <img
+          className='current-streak'
+          src='https://github-readme-stats.vercel.app/api?username=LuiSauter&theme=blue-green'
+        />
       </ProjectContainer>
     </>
   )
