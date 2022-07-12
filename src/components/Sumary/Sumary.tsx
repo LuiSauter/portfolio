@@ -3,12 +3,13 @@ import { BookIcon } from '../../assets/icons/BookIcon'
 import { CoffeIcon } from '../../assets/icons/CoffeIcon'
 import { SumaryContainer } from './SumaryContainer'
 import { technologiesIcons } from '../../assets/icons/SkillsIcons'
+const initialDate = new Date("08/08/2021")
+const currentDay = new Date(Date.now())
+const DifferenceInTime = currentDay.getTime() - initialDate.getTime(); 
+const DifferenceInDays = DifferenceInTime / (1000 * 3600 * 24);
 
 export const Sumary = () => {
-  const counter = Date.now()
-  const day = Number(new Date(counter - 1625358629161)) / 100000000
-  const dayFormat = Math.round(day * 8)
-  const coffeeNumber = new Intl.NumberFormat('en').format(dayFormat)
+  const coffeeNumber = new Intl.NumberFormat('en').format(Math.floor(DifferenceInDays))
   return (
     <SumaryContainer>
       <article className='card-sumary'>
