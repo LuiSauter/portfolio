@@ -1,18 +1,15 @@
 import type { AppProps } from 'next/app'
-import { DarkStateProvider } from '../context/DarkStateProvider'
-import { Layout } from '../Layout/Layout'
-import { GlobalStyle } from '../styles/GlobalStyled'
+import { Layout } from '../components/Layout/Layout'
+import { ThemeProvider } from '../context/ThemeProvider'
+import '../styles/global.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps | any) {
   return (
-    <>
-      <DarkStateProvider>
-        <GlobalStyle />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </DarkStateProvider>
-    </>
+    <ThemeProvider forcedTheme={Component.theme || undefined}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   )
 }
 
