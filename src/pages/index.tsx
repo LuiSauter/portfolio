@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment } from 'react'
+import { SocialNetwork } from '../components/SocialNetwork/SocialNetwork'
 // import { SkillsContainer } from '../components/Skills/SkillsContainer'
 // import { SocialNetwork } from '../components/SocialNetwork/SocialNetwork'
 // import { Sumary } from '../components/Sumary/Sumary'
@@ -25,21 +26,20 @@ const HomePage: NextPage = () => {
               priority={true}
             />
           </figure>
-          <h1>
-            <span className={style.clip}>Sauterdev</span>
-          </h1>
         </div>
-        {/* <div className='home-head'>
-          <h2 className='text-secondary'>
-            Apasionado de la tecnología, trabajador perfeccionista, amante del
-            Open-Source y del trabajo en equipo.
+        <div className={style.heroContent}>
+          <h1 className={style.meTitle}>
+            <span className={style.clip}>Luis Gabriel Janco</span>
+          </h1>
+          <p>
+            Full-Stack Web Developer and <span>JS</span> Lover
+          </p>
+          <h2 className={style.tagline}>
+            Apasionado de la tecnología, amante del Open-Source y del trabajo en
+            equipo.
           </h2>
-          <button onClick={() => console.log('Hola bobo!')}>
-            FrontEnd Developer
-          </button>
-          <SocialNetwork />
-        </div> */}
-        {/* <DownArrow href='#skills'>{downArrow}</DownArrow> */}
+        </div>
+        <SocialNetwork />
       </section>
       {/* <div className='skills-sumary'>
         <h3 id='skills'>
