@@ -1,20 +1,23 @@
 *, :before, :after {
   box-sizing: border-box;
+  transition: background-color 0.1s ease-out;
 }
 
 :root {
-  --po-white: #FFFFFF;
   --po-white: #FFFFFF;
   --po-black: #1a1a1a;
   --po-black-pure: #000000;
   --po-indigo: #213547;
   --po-primary-dark-1: #1f2028;
+  --po-gradient-1: #eebd2c;
+  --po-gradient-2: #b829e7;
 }
 :root {
   --po-bg-1: #ffffff;
   --po-bg-2: #000000;
   --po-bg-3: #f2f2f2;
   --po-bg-4: #e5e5e5;
+  --po-bg-5: #1a1a1a;
   --po-bg-blur: #FFFFFFb3;
   --po-divider-light-1: #3c3c3c1f;
   --po-divider-light-2: #42424275;
@@ -28,7 +31,8 @@
   --po-bg-1: var(--po-primary-dark-1);
   --po-bg-2: #2e303a;
   --po-bg-3: #3a3a3a;
-  --po-bg-4: #1a1a1a;
+  --po-bg-4: #6d6d6dbd;
+  --po-bg-5: #1a1a1a;
   --po-bg-blur: #1f2028b3;
   --po-divider-light-1: #5454547a;
   --po-divider-light-2: #aaaaaabd;
@@ -94,5 +98,10 @@ h1,h2,h3,h4,a {
   margin: 0;
   font-size: inherit;
   line-height: 24px;
+  color: inherit;
+}
+
+::selection {
+  background: var(--po-bg-4);
   color: inherit;
 }
