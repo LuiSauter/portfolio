@@ -1,0 +1,118 @@
+.features {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  gap: 1rem;
+}
+
+.features article {
+  background-color: var(--po-bg-blur);
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  display: inherit;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 1;
+  backdrop-filter: blur(20px);
+  /* box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.027); */
+}
+.features article div {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 0.4rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  position: relative;
+}
+
+.shadowIcon {
+  position: absolute;
+  top: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-image: linear-gradient( -45deg, var(--po-gradient-1) 50%, var(--po-gradient-2) 50% );
+  filter: blur(20px);
+  opacity: 0.5;
+  z-index: 0;
+  background-color: red;
+}
+
+.features article div figure {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.267);
+}
+
+.features article h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--po-text-1);
+  z-index: 1;
+  letter-spacing: -0.1px;
+}
+
+.features article p {
+  font-size: 1rem;
+  color: var(--po-text-2);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+  /* letter-spacing: -0.1px; */
+}
+
+
+@media screen and (min-width: 640px) {
+  .features {
+    flex-direction: row;
+    width: 100%;
+  }
+  .features article {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .features article {
+    width: calc((100% / 3) - 1rem);
+  }
+}
+
+/* cursor */
+.cursor {
+  position: fixed;
+  z-index: 1;
+  background-image: linear-gradient( -45deg, var(--po-gradient-1) 50%, var(--po-gradient-2) 50% );
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  /* filter: blur(25px); */
+  pointer-events: none;
+  box-shadow: 0px 0px 20px #2696E8, 0px 8px 60px #2696E8, 0px 8px 100px #2696E8;
+  animation: colors 5s infinite;
+}
+
+@keyframes colors {
+  0% {
+    filter: hue-rotate(0deg) blur(55px);
+  }
+  100% {
+    filter: hue-rotate(360deg) blur(55px);
+  }
+}
+
+.cursor:before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient( -45deg, var(--po-gradient-1) 50%, var(--po-gradient-2) 50% );
+  width: 5rem;
+  height: 5rem;
+  /* opacity: 0.5; */
+  transform: translate(-25%, -25%);
+  border-radius: 50%;
+}
