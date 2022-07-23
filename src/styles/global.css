@@ -30,7 +30,7 @@
 [data-theme='dark'] {
   --po-bg-1: var(--po-primary-dark-1);
   --po-bg-2: #2e303a;
-  --po-bg-3: #3a3a3a;
+  --po-bg-3: #2e303a;
   --po-bg-4: #6d6d6dbd;
   --po-bg-5: #1a1a1a;
   --po-bg-blur: #1f2028b3;
@@ -64,6 +64,7 @@ html, body {
 body {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -104,4 +105,21 @@ h1,h2,h3,h4,a {
 ::selection {
   background: var(--po-bg-4);
   color: inherit;
+}
+
+#shadow-gradient[aria-label="gradient-1"] {
+  --po-gradient-1: #eebd2c;
+  --po-gradient-2: #b829e7;
+}
+#shadow-gradient[aria-label="gradient-2"] {
+  --po-gradient-1: #47c8ff;
+  --po-gradient-2: #b829e7;
+}
+#shadow-gradient[aria-label="gradient-3"] {
+  --po-gradient-1: #32bd7e;
+  --po-gradient-2: #47c8ff;
+}
+#shadow-gradient[aria-label="gradient-4"] {
+  --po-gradient-1: #d83bd2;
+  --po-gradient-2: #f44250;
 }
