@@ -1,11 +1,19 @@
-.section {
+.section, .sectionFeatures {
   width: 100%;
   height: max-content;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section {
   padding: 2.5rem 1.5rem;
 }
+
+.sectionFeatures {
+  padding: 0 1.5rem;
+}
+
 .hero {
   text-align: center;
   display: flex;
@@ -24,31 +32,6 @@
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0px 8px 20px 1px rgba(0, 0, 0, 0.301);
-}
-
-.shadow[aria-label="gradient-1"],
-.meTitle[aria-label="gradient-1"],
-.action[aria-label="gradient-1"] {
-  --po-gradient-1: #eebd2c;
-  --po-gradient-2: #b829e7;
-}
-.shadow[aria-label="gradient-2"],
-.meTitle[aria-label="gradient-2"],
-.action[aria-label="gradient-2"] {
-  --po-gradient-1: #47c8ff;
-  --po-gradient-2: #b829e7;
-}
-.shadow[aria-label="gradient-3"],
-.meTitle[aria-label="gradient-3"],
-.action[aria-label="gradient-3"] {
-  --po-gradient-1: #32bd7e;
-  --po-gradient-2: #47c8ff;
-}
-.shadow[aria-label="gradient-4"],
-.meTitle[aria-label="gradient-4"],
-.action[aria-label="gradient-4"] {
-  --po-gradient-1: #d83bd2;
-  --po-gradient-2: #f44250;
 }
 
 .shadow {
@@ -170,6 +153,9 @@
   .section {
     padding: 4rem 3rem;
   }
+  .sectionFeatures {
+    padding: 0 3rem;
+  }
   .hero figure {
     min-width: 230px;
     min-height: 230px;
@@ -200,8 +186,11 @@
 @media screen and (min-width: 960px) {
   .section {
     flex-direction: row;
-    padding: 6rem 6rem 4rem;
     margin: 0 auto;
+    padding: 6rem 6rem 4rem;
+  }
+  .sectionFeatures {
+    padding: 0 6rem;
   }
   .hero {
     order: 2;
@@ -250,6 +239,9 @@
 @media screen and (min-width: 1200px) {
   .section {
     padding: 8rem 6rem 4rem;
+  }
+  .sectionFeatures {
+    padding: 0 6rem;
   }
   .heroContent p, .heroContent h2 {
     min-width: 680px;
