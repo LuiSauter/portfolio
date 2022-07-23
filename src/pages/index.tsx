@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment, useEffect, useState } from 'react'
+import Features from '../components/Features/Features'
 import { SkillsContainer } from '../components/Skills/SkillsContainer'
 import { Sumary } from '../components/Sumary/Sumary'
 import style from '../styles/pages/index.module.css'
@@ -22,7 +23,7 @@ const HomePage: NextPage = () => {
     }
   }, [])
 
-  const paps = mounted && `gradient-${bgGradient}` || ''
+  const gradientLabel = mounted && `gradient-${bgGradient}` || ''
 
   return (
     <Fragment>
@@ -31,7 +32,7 @@ const HomePage: NextPage = () => {
       </Head>
       <section className={style.section}>
         <div className={style.hero}>
-          <div aria-label={`gradient-${bgGradient}`} className={style.shadow} />
+          <div id='shadow-gradient' aria-label={gradientLabel} className={style.shadow} />
           <figure>
             <Image
               src='/sauterdev.jpg'
@@ -43,7 +44,7 @@ const HomePage: NextPage = () => {
           </figure>
         </div>
         <div className={style.heroContent}>
-          <h1 aria-label={paps} className={style.meTitle}>
+          <h1 id='shadow-gradient' aria-label={gradientLabel} className={style.meTitle}>
             <span title='JavaScript Lover' className={style.clip}>
               Sauterdev
             </span>
@@ -57,7 +58,7 @@ const HomePage: NextPage = () => {
           </h2>
           <div className={style.actions}>
             <Link href='/about'>
-              <a aria-label={paps} className={style.action}>
+              <a id='shadow-gradient' aria-label={gradientLabel} className={style.action}>
                 About me
               </a>
             </Link>
@@ -71,7 +72,9 @@ const HomePage: NextPage = () => {
         </div>
         {/* <SocialNetwork /> */}
       </section>
-      {/* <Features></Features> */}
+      <section className={style.sectionFeatures}>
+        <Features gradient={gradientLabel} />
+      </section>
       {/* <div className='skills-sumary'>
         <h3 id='skills'>
           Habilidades
