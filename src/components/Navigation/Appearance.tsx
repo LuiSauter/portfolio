@@ -24,10 +24,12 @@ const Appearance: React.FC = () => {
     checkIfIsDark() ? setTheme('light') : setTheme('dark')
   }
 
+  const titleTheme = mounted && checkIfIsDark() ? 'theme Light' : 'theme Dark' || ''
+
   return (
     <div className={style.appearance}>
       {mounted && (
-        <button onClick={handleTheme}>
+        <button onClick={handleTheme} aria-label='toggle dark mode' title={titleTheme}>
           {checkIfIsDark() ? icon.sun : icon.moon}
         </button>
       )}
