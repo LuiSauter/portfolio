@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import style from './navigation.module.css'
 import Burger from './Burger'
