@@ -1,28 +1,37 @@
 import Image from 'next/image'
-import React, { MouseEvent, useEffect, useRef, useState } from 'react'
+import React, { MouseEvent, useState } from 'react'
 import style from './features.module.css'
 type Props = {
   gradient: string,
 }
 
 const Features: React.FC<Props> = ({ gradient }) => {
-  const cursorRef = useRef(null)
-  const [x, setX] = useState(0)
-  const [y, setY] = useState(0)
+  const [x, setX] = useState(-500)
+  const [y, setY] = useState(-500)
+  const [leaveMouse, setLeaveMouse] = useState(false)
   const handleMouseMove = (e: MouseEvent) => {
-    if(cursorRef.current) {
-      setX(e.clientX)
-      setY(e.clientY)
-    }
+    setLeaveMouse(false)
+    setX(e.clientX - 50)
+    setY(e.clientY - 50)
   }
 
   return (
     <div
       onMouseMove={handleMouseMove}
+      onMouseLeave={() => setLeaveMouse(true)}
       className={style.features}
-      ref={cursorRef}
     >
-      <div style={{ top: y + 'px', left: x + 'px' }} className={style.cursor} />
+      <div
+        id='shadow-gradient'
+        aria-label={gradient}
+        style={{
+          top: y + 'px',
+          left: x + 'px',
+          transform: leaveMouse ? 'scale(0)' : 'scale(1)',
+          opacity: leaveMouse ? 0 : 0.5,
+        }}
+        className={style.cursor}
+      />
       <article>
         <div>
           <figure>
