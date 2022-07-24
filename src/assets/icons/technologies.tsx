@@ -155,6 +155,7 @@ export const tailwindcss = (
 )
 
 export const graphql = (
+  // eslint-disable-next-line @next/next/no-img-element
   <img
     src='https://graphql.org/img/logo.svg'
     alt='GraphQL - Luis Gabriel Janco'

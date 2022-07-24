@@ -1,10 +1,6 @@
 import type { NextPage } from 'next'
 import React from 'react'
 import Head from 'next/head'
-
-import { colorDark } from '../styles/theme'
-import * as icons from '../assets/icons'
-
 import projects from '../assets/data/projects'
 import { ProjectItem } from '../components/Project/ProjectItem'
 
