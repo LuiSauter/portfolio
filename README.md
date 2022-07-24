@@ -1,3 +1,5 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/6b469ad80cea45ec953b49438327bfc6)](https://www.codacy.com/gh/LuiSauter/portfolio/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LuiSauter/portfolio&amp;utm_campaign=Badge_Grade)
 
-![](https://camo.githubusercontent.com/ccde18ad0d674ccd8e9e039d55895d826384b8a7fada194fbdca2e3813670892/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f382f38652f4e6578746a732d6c6f676f2e7376672f34343070782d4e6578746a732d6c6f676f2e7376672e706e67)
+# Luis Gabriel Janco - Portfolio
+
+![sauterdev-portfolio](https://user-images.githubusercontent.com/88288135/180632492-b7e669c2-f30a-47fa-9859-a41be29c7bb5.jpg)
