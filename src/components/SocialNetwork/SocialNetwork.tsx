@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { Linkedin } from '../../assets/icons/LinkedinIcon'
 import { GithubIcon } from '../../assets/icons/GithubIcon'
 import { TwitterIcon } from '../../assets/icons/TwitterIcon'
-import { SocialIcons } from './SocialIcons'
+import style from './social.module.css'
 
 export const SocialNetwork = () => {
   return (
-    <SocialIcons className='social-network'>
+    <div className={style.socialNetwork}>
       <Link href='https://www.linkedin.com/in/luis-gabriel-janco/'>
         <a target='_blank'>
           <Linkedin />
@@ -23,6 +23,6 @@ export const SocialNetwork = () => {
           <TwitterIcon />
         </a>
       </Link>
-    </SocialIcons>
+    </div>
   )
 }

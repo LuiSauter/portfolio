@@ -1,7 +1,4 @@
 import React from 'react'
-// import { CardDescription, CardItemProject, Footer } from './style'
-// import Image from 'next/image'
-// import Link from 'next/link'
 import * as icon from '../../assets/icons'
 
 const shimmer = (w: any, h: any) => `
@@ -23,14 +20,7 @@ const toBase64 = (str: any) =>
     ? Buffer.from(str).toString('base64')
     : window.btoa(str)
 
-export const ProjectItem = ({
-  authors,
-  description,
-  image,
-  tags,
-  title,
-  url,
-}: Project) => {
+export const ProjectItem = ({ description, tags, title, url }: Project) => {
   const github = 'https://github.com/LuiSauter/'
   return (
     <article className='card-item'>
@@ -38,7 +28,10 @@ export const ProjectItem = ({
         <span className='book'>{icon.book}</span>
         <h2>{title}</h2>
         <span className='visibility'>Public</span>
-        <img src={`https://badgen.net/github/commits/LuiSauter/${url}`} title={url} />
+        <img
+          src={`https://badgen.net/github/commits/LuiSauter/${url}`}
+          title={url}
+        />
         <img src='https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github' />
       </div>
       <p className='card-item__description'>{description}</p>
