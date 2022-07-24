@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import React from 'react'
 import { GithubIcon } from '../../assets/icons/GithubIcon'
@@ -32,7 +33,7 @@ export const Layout = ({children}: Props) => {
           >
             <GithubIcon />
           </a>
-          <img src='https://gpvc.arturio.dev/LuiSauter' />
+          <img src='https://gpvc.arturio.dev/LuiSauter' alt='github luisauter' />
         </div>
         <div className={style.created}>
           <span>

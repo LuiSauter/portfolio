@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import * as icon from '../../assets/icons'
 
@@ -31,8 +32,9 @@ export const ProjectItem = ({ description, tags, title, url }: Project) => {
         <img
           src={`https://badgen.net/github/commits/LuiSauter/${url}`}
           title={url}
+          alt='Luis Gabriel Janco'
         />
-        <img src='https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github' />
+        <img src='https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github' alt='Luis Gabriel Janco' />
       </div>
       <p className='card-item__description'>{description}</p>
       <ul className='card-item__tags'>
