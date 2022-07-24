@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Fragment, useEffect, useState } from 'react'
+import Link from 'next/link'
 import Features from '../components/Features/Features'
-import { SkillsContainer } from '../components/Skills/SkillsContainer'
-import { Sumary } from '../components/Sumary/Sumary'
+import Skills from '../components/Skills/Skills'
 import style from '../styles/pages/index.module.css'
+import Sumary from '../components/Sumary/Sumary'
 
 function getRandom(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -32,7 +32,11 @@ const HomePage: NextPage = () => {
       </Head>
       <section className={style.section}>
         <div className={style.hero}>
-          <div id='shadow-gradient' aria-label={gradientLabel} className={style.shadow} />
+          <div
+            id='shadow-gradient'
+            aria-label={gradientLabel}
+            className={style.shadow}
+          />
           <figure>
             <Image
               src='/sauterdev.jpg'
@@ -44,7 +48,11 @@ const HomePage: NextPage = () => {
           </figure>
         </div>
         <div className={style.heroContent}>
-          <h1 id='shadow-gradient' aria-label={gradientLabel} className={style.meTitle}>
+          <h1
+            id='shadow-gradient'
+            aria-label={gradientLabel}
+            className={style.meTitle}
+          >
             <span title='JavaScript Lover' className={style.clip}>
               Sauterdev
             </span>
@@ -58,7 +66,11 @@ const HomePage: NextPage = () => {
           </h2>
           <div className={style.actions}>
             <Link href='/about'>
-              <a id='shadow-gradient' aria-label={gradientLabel} className={style.action}>
+              <a
+                id='shadow-gradient'
+                aria-label={gradientLabel}
+                className={style.action}
+              >
                 About me
               </a>
             </Link>
@@ -70,21 +82,14 @@ const HomePage: NextPage = () => {
             </Link>
           </div>
         </div>
-        {/* <SocialNetwork /> */}
       </section>
       <section className={style.sectionFeatures}>
         <Features gradient={gradientLabel} />
       </section>
-      {/* <div className='skills-sumary'>
-        <h3 id='skills'>
-          Habilidades
-        </h3>
-        <SkillsContainer />
-        <h3 id='resume'>
-          Resumen
-        </h3>
-        <Sumary />
-      </div> */}
+      <section className={style.sectionSkills}>
+        <Skills gradient={gradientLabel} />
+      </section>
+      <Sumary />
     </Fragment>
   )
 }
