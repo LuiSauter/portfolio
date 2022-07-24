@@ -19,6 +19,7 @@
   --po-bg-4: #e5e5e5;
   --po-bg-5: #1a1a1a;
   --po-bg-blur: #FFFFFFb3;
+  --po-bg-blur-2: #f2f2f27e;
   --po-divider-light-1: #3c3c3c1f;
   --po-divider-light-2: #42424275;
   --po-text-1: #213547;
@@ -34,6 +35,7 @@
   --po-bg-4: #6d6d6dbd;
   --po-bg-5: #1a1a1a;
   --po-bg-blur: #1f2028b3;
+  --po-bg-blur-2: #2e303a6e;
   --po-divider-light-1: #5454547a;
   --po-divider-light-2: #aaaaaabd;
   --po-text-1: #FFFFFFDE;
@@ -51,6 +53,7 @@
   --po-burger-top-1: 1%;
   --po-burger-top-2: 45%;
   --po-nav-height: 56px;
+  --po-filter: 100%;
 }
 
 html, body {
