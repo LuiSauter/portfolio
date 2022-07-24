@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
-import Head from 'next/head'
-import { Footer } from '../Footer/Footer'
+import { GithubIcon } from '../../assets/icons/GithubIcon'
+import { InstagramIcon } from '../../assets/icons/InstagramIcon'
 import Navigation from '../Navigation/Navigation'
 import style from './layout.module.css'
 
@@ -13,7 +14,35 @@ export const Layout = ({children}: Props) => {
     <div className={style.layout}>
       <Navigation />
       <main className={style.layoutContent}>{children}</main>
-      {/* <Footer /> */}
+      <footer className={style.footer}>
+        <div className={style.meSocial}>
+          <a
+            href='https://www.instagram.com/sauterdev/'
+            target='_blank'
+            rel='noreferrer'
+            className={style.linkIcon}
+          >
+            <InstagramIcon />
+          </a>
+          <a
+            href='https://github.com/LuiSauter'
+            target='_blank'
+            rel='noreferrer'
+            className={style.linkIcon}
+          >
+            <GithubIcon />
+          </a>
+          <img src='https://gpvc.arturio.dev/LuiSauter' />
+        </div>
+        <div className={style.created}>
+          <span>
+            Copyright © 2021-2022 Develop by{' '}
+            <Link href='https://github.com/LuiSauter'>
+              <a target='_blank'>Luis Gabriel Janco</a>
+            </Link>
+          </span>
+        </div>
+      </footer>
     </div>
   )
 }
