@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from '../../context/ThemeProvider'
 import * as icon from '../../assets/icons'
 import style from './navigation.module.css'
+import useThemes from '../../hooks/useThemes'
+import useSound from '../../hooks/useSound'
 
 let cleanup = true
 const Appearance: React.FC = () => {
-  const isThemeDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
-  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const { checkIfIsDark, setTheme } = useThemes()
+
+  const {playSound} = useSound()
+
   useEffect(() => {
     if (cleanup) setMounted(true)
     return () => {
@@ -15,13 +19,9 @@ const Appearance: React.FC = () => {
     }
   }, [])
 
-  const checkIfIsDark = () => {
-    return isThemeDark && theme === 'system'
-      ? true
-      : theme === 'dark' ? true : false
-  }
   const handleTheme = () => {
     checkIfIsDark() ? setTheme('light') : setTheme('dark')
+    playSound('/sounds/button.mp3')
   }
 
   const titleTheme = mounted && checkIfIsDark() ? 'theme Light' : 'theme Dark' || ''
