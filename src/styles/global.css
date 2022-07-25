@@ -1,6 +1,6 @@
 *, :before, :after {
   box-sizing: border-box;
-  transition: background-color 0.1s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 :root {
