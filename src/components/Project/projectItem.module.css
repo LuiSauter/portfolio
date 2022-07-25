@@ -1,0 +1,96 @@
+.figure {
+  margin: 0;
+  display: flex;
+  flex-shrink: 0;
+  border: 1px solid var(--po-divider-light-1);
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.figure img {
+  width: 100%;
+  height: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.figure:hover {
+  transform: scale(1.01);
+  transition: scale 1s ease-in-out;
+  box-shadow: 1px 1px 10px var(--po-bg-3);
+}
+
+/* .article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--po-divider-light-1);
+  border-radius: .5rem;
+  color: var(--po-text-2);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.header h2 {
+  color: var(--po-text-1);
+}
+
+.bookIcon {
+  width: 1.3rem;
+  height: 1.3rem;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.bookIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.visibility {
+  border: 1px solid var(--po-divider-light-1);
+  padding: 0rem 0.4rem;
+  border-radius: .8rem;
+  color: inherit;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: inherit;
+}
+
+.languages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.langItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.circle {
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 50%;
+  border: 1px solid var(--po-divider-light-1);
+} */
