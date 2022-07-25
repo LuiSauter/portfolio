@@ -20,9 +20,11 @@
 }
 
 .sumary h3 {
-  color: var(--po-text-2);
-  font-size: 1.1rem;
-  font-weight: 500;
+  color: var(--po-text-1);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  margin-bottom: 2rem;
 }
 
 .card {
@@ -34,7 +36,7 @@
   backdrop-filter: blur(40px);
   width: 100%;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   border-radius: 1rem;
   z-index: 1;
   color: var(--po-text-1);
