@@ -51,7 +51,7 @@ const Features: React.FC<Props> = ({ gradient }) => {
         <h2>Fron-End Development</h2>
         <p>
           With more than 1 year of experience, receptive web, semantic web
-          analysis and interaction patterns of interface elements
+          analysis and interaction patterns of interface elements.
         </p>
       </article>
       <article>
@@ -73,7 +73,7 @@ const Features: React.FC<Props> = ({ gradient }) => {
         <h2>Back-End Development</h2>
         <p>
           Analytical problem solver and developing security adding value focused
-          on REST API and relational and non-relational database
+          on REST API and relational and non-relational database.
         </p>
       </article>
       <article>
