@@ -23,14 +23,14 @@ const Sumary: React.FC = () => {
 
   return (
     <section className={style.sumary}>
-      <h3>Summary</h3>
+      <h3 id='sumary'>Summary</h3>
       <div className={style.content}>
         <article className={style.card}>
           <figure>
             <BookIcon />
           </figure>
           <h4>Cursos terminados</h4>
-          <span>{frontStack + backStack}</span>
+          <span>{frontStack + backStack + 3}</span>
         </article>
         <article className={style.card}>
           <figure>

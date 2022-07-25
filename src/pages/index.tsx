@@ -65,7 +65,7 @@ const HomePage: NextPage = () => {
             Passionate about technology, lover of Open-Source and teamwork.
           </h2>
           <div className={style.actions}>
-            <Link href='/about'>
+            <Link href='/'>
               <a
                 id='shadow-gradient'
                 aria-label={gradientLabel}
@@ -74,11 +74,11 @@ const HomePage: NextPage = () => {
                 About me
               </a>
             </Link>
-            <Link href='/contact'>
+            <Link href='#sumary'>
               <a className={style.actionExtra}>Contact</a>
             </Link>
-            <Link href='/contact'>
-              <a className={style.actionExtra}>Stack</a>
+            <Link href='#sumary'>
+              <a className={style.actionExtra}>My Summary</a>
             </Link>
           </div>
         </div>
