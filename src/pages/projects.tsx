@@ -3,32 +3,34 @@ import React from 'react'
 import Head from 'next/head'
 import projects from '../assets/data/projects'
 import { ProjectItem } from '../components/Project/ProjectItem'
+import * as icons from '../assets/icons'
+import style from '../styles/pages/projects.module.css'
 
 const Projects: NextPage = (): JSX.Element => {
   const projectsReverse = [...projects].reverse()
   return (
     <>
       <Head>
-        <title>Sauterdev | portafolio</title>
+        <title>Luis Gabril Janco | Projects</title>
         <meta
           name='description'
-          content='Proyectos educativos, personales y profesionales con los que me sigo formando dia a dia'
+          content='Educational, personal and professional projects with which I continue to train day by day'
         />
         <link rel='canonical' href='https://sauterdev.vercel.app/projects' />
       </Head>
-      {/* <TitleProjects>
-        <div className='hero'>{icons.projectHeroDev}</div>
-        <div className='title'>
-          <h2 className='title-h2'>
-            Proyectos educativos, personales y profesionales{' '}
-            <span>con los que sigo formándome día a día.</span>
-          </h2>
-        </div>
-      </TitleProjects> */}
-      <div style={{ position: 'relative', transform: 'translateX(-2%)' }}>
-        {/* <DownArrow href='#projects'>{downArrow}</DownArrow> */}
-      </div>
-      <div id='projects'>
+      <section className={style.header}>
+        <figure className={style.heroImage}>
+          <div className={style.heroShadow} />
+          {icons.projectHeroDev}
+        </figure>
+        <h2 className={style.title}>
+          <span className={style.normal}>Educational, personal and </span>{' '}
+          <span className={style.textAqua}>professional projects</span>
+          <span className={style.normal}>with which I </span>{' '}
+          <span className={style.textGreen}>continue to train day by day.</span>
+        </h2>
+      </section>
+      <section className={style.contentProjects}>
         {projectsReverse.map((project: Project, index) => (
           <ProjectItem
             key={index}
@@ -40,7 +42,7 @@ const Projects: NextPage = (): JSX.Element => {
             tags={project.tags}
           />
         ))}
-        {projectsReverse.length % 2 !== 0 && <br />}
+        {/* {projectsReverse.length % 2 !== 0 && <br />} */}
         {/* <div className='stats'>
           <img
             className='current-streak'
@@ -65,7 +67,7 @@ const Projects: NextPage = (): JSX.Element => {
             }`}
           />
         </div> */}
-      </div>
+      </section>
     </>
   )
 }
