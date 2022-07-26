@@ -21,18 +21,20 @@ const Appearance: React.FC = () => {
 
   const handleTheme = () => {
     checkIfIsDark() ? setTheme('light') : setTheme('dark')
-    playSound('/sounds/button.mp3')
+    playSound({audioSrc:'/sounds/button-3.mp3', volume: 1, time: 0.4})
   }
 
   const titleTheme = mounted && checkIfIsDark() ? 'theme Light' : 'theme Dark' || ''
 
   return (
     <div className={style.appearance}>
-      {mounted && (
-        <button onClick={handleTheme} aria-label='toggle dark mode' title={titleTheme}>
-          {checkIfIsDark() ? icon.sun : icon.moon}
-        </button>
-      )}
+      <button
+        onClick={handleTheme}
+        aria-label='toggle dark mode'
+        title={titleTheme}
+      >
+        {mounted && (checkIfIsDark() ? icon.sun : icon.moon) || ''}
+      </button>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import Features from '../components/Features/Features'
 import Skills from '../components/Skills/Skills'
 import style from '../styles/pages/index.module.css'
 import Sumary from '../components/Sumary/Sumary'
+import useSound from '../hooks/useSound'
 
 function getRandom(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -14,6 +15,7 @@ function getRandom(min: number, max: number) {
 let cleanup = true
 const HomePage: NextPage = () => {
   const [mounted, setMounted] = useState(false)
+  const { playSound } = useSound()
   const bgGradient = getRandom(1, 4)
 
   useEffect(() => {
@@ -22,6 +24,10 @@ const HomePage: NextPage = () => {
       cleanup = false
     }
   }, [])
+
+  const handleClick = () => {
+    playSound({ audioSrc: '/sounds/click.mp3', volume: 0.3, time: 0.8 })
+  }
 
   const gradientLabel = mounted && `gradient-${bgGradient}` || ''
 
@@ -67,6 +73,7 @@ const HomePage: NextPage = () => {
           <div className={style.actions}>
             <Link href='/'>
               <a
+                onClick={handleClick}
                 id='shadow-gradient'
                 aria-label={gradientLabel}
                 className={style.action}
@@ -75,10 +82,10 @@ const HomePage: NextPage = () => {
               </a>
             </Link>
             <Link href='#sumary'>
-              <a className={style.actionExtra}>Contact</a>
+              <a onClick={handleClick} className={style.actionExtra}>Contact</a>
             </Link>
             <Link href='#sumary'>
-              <a className={style.actionExtra}>My Summary</a>
+              <a onClick={handleClick} className={style.actionExtra}>My Summary</a>
             </Link>
           </div>
         </div>
