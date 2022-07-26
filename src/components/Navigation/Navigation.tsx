@@ -5,9 +5,11 @@ import Burger from './Burger'
 import NavLink from './NavLink'
 import Appearance from './Appearance'
 import useToggle from '../../hooks/useToggle'
+import useSound from '../../hooks/useSound'
 
 const Navigation: React.FC = () => {
   const [toggle, handleToggle] = useToggle()
+  const { playSound } = useSound()
 
   let cleanup = true
   useEffect(() => {
@@ -24,12 +26,20 @@ const Navigation: React.FC = () => {
     }
   }, [toggle])
 
+  const handleClick = () => {
+    playSound({ audioSrc: '/sounds/click.mp3', volume: 0.3, time: 0.8 })
+  }
+
+  const mouseEnter = () => {
+    playSound({ audioSrc: '/sounds/nav-hover-2.mp3', volume: 0.7, time: 0.9 })
+  }
+
   return (
     <header className={style.header}>
       <div className={style.navbar}>
         <h1 className={style.title}>
           <Link href='/'>
-            <a>Luis Gabriel Janco</a>
+            <a onClick={handleClick} onMouseEnter={mouseEnter}>Luis Gabriel Janco</a>
           </Link>
         </h1>
         <nav className={style.nav}>
