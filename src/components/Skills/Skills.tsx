@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React, { Fragment, MouseEvent, useState } from 'react'
 import { technologiesIcons } from '../../assets/icons/SkillsIcons'
+import useSound from '../../hooks/useSound'
 import style from './skills.module.css'
 
 type Props = {
@@ -11,11 +12,22 @@ const Skills: React.FC<Props> = ({ gradient }) => {
   const [x, setX] = useState(-500)
   const [y, setY] = useState(-500)
   const [leaveMouse, setLeaveMouse] = useState(false)
+  const { playSound } = useSound()
+
   const handleMouseMove = (e: MouseEvent) => {
     setLeaveMouse(false)
     setX(e.clientX - 50)
     setY(e.clientY - 50)
   }
+
+  const mouseEnter = () => {
+    playSound({ audioSrc: '/sounds/hover.mp3', volume: 1, time: 0.2 })
+  }
+
+  const handleClick = () => {
+    playSound({ audioSrc: '/sounds/click.mp3', volume: 0.3, time: 0.8 })
+  }
+
   return (
     <Fragment>
       <header className={style.header}>
@@ -47,6 +59,8 @@ const Skills: React.FC<Props> = ({ gradient }) => {
             (svg, index: number) => (
               <Link href={svg.link} key={index}>
                 <a
+                  onClick={handleClick}
+                  onMouseEnter={mouseEnter}
                   target='_blank'
                   style={{ color: svg.color }}
                   title={svg.skill}
@@ -63,6 +77,8 @@ const Skills: React.FC<Props> = ({ gradient }) => {
             (svg, index: number) => (
               <Link href={svg.link} key={index}>
                 <a
+                  onClick={handleClick}
+                  onMouseEnter={mouseEnter}
                   target='_blank'
                   style={{ color: svg.color }}
                   title={svg.skill}
