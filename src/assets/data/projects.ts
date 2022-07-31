@@ -11,6 +11,7 @@ const {
   styledComponent,
   tailwindcss,
   typeScript,
+  electron
 } = technologiesIcons.frontend
 const { express, firebase, mongoDB, mongoose, node } = technologiesIcons.backend
 export const technologies = [
@@ -37,7 +38,7 @@ export default [
     title: 'Landing page',
     description: 'Landing page for my github',
     image: '/images/landingpage.jpg',
-    url: 'landingpage',
+    url: 'LuiSauter/landingpage',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [html, css],
   },
@@ -45,35 +46,24 @@ export default [
     title: 'Gallery',
     description: 'Project made with pure vanila js',
     image: '/images/gallery.jpg',
-    url: 'gallery',
+    url: 'LuiSauter/gallery',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
-    tags: [
-      html,
-      scss,
-      javaScript,
-    ],
+    tags: [html, scss, javaScript],
   },
   {
     title: 'Notes App',
     description:
       'This project is a practice of a full stack bootcamp with technologiesIcons MernStack.',
     image: '/images/noteapp.jpg',
-    url: 'spa-notes-app',
+    url: 'LuiSauter/spa-notes-app',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
-    tags: [
-      javaScript,
-      react,
-      node,
-      express,
-      mongoDB,
-      mongoose,
-    ],
+    tags: [javaScript, react, node, express, mongoDB, mongoose],
   },
   {
     title: 'Search Giffs',
     description: 'Online gifs search engine with react and giphy api.',
     image: '/images/gifs.jpg',
-    url: 'search-gifs',
+    url: 'LuiSauter/search-gifs',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       react,
@@ -90,7 +80,7 @@ export default [
     title: 'My favorite videos',
     description: 'Web application with react to save your favorite videos! :D.',
     image: '/images/favoritevideos.jpg',
-    url: 'my-favorite-videos',
+    url: 'LuiSauter/my-favorite-videos',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       react,
@@ -107,15 +97,9 @@ export default [
     description:
       'Disney clone is a project only for development practices and above all for fun :D.',
     image: '/images/disneyplus.jpg',
-    url: 'disney-clone',
+    url: 'LuiSauter/disney-clone',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
-    tags: [
-      react,
-      javaScript,
-      styledComponent,
-      firebase,
-      redux,
-    ],
+    tags: [react, javaScript, styledComponent, firebase, redux],
   },
   {
     title: 'Bookend',
@@ -123,7 +107,7 @@ export default [
       'Bookend is a web application to share books and it was thanks to the idea that arose when I was looking to carry out fullstack development practices',
     image:
       'https://raw.githubusercontent.com/LuiSauter/bookend/main/public/images/bookend-demo.jpg',
-    url: 'bookend',
+    url: 'LuiSauter/bookend',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [
       react,
@@ -142,13 +126,42 @@ export default [
       'React Native CLI - This is a cross-platform mobile app of bookend app - free books for everyone 📚',
     image:
       'https://raw.githubusercontent.com/LuiSauter/bookend/main/public/images/bookend-demo.jpg',
-    url: 'bookend-android-ios',
+    url: 'LuiSauter/bookend-android-ios',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
-    tags: [
-      react,
-      graphQL,
-      mongoose,
-      mongoDB,
-    ],
+    tags: [react, graphQL, mongoose, mongoDB],
+  },
+  {
+    title: 'Discordia',
+    description: 'Discord-clone for educational purposes and fun! 👨🏻‍💻',
+    image: '',
+    url: 'LuiSauter/discordia',
+    authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
+    tags: [react, javaScript, tailwindcss, firebase, redux],
+  },
+  {
+    title: 'Discordia backend',
+    description: 'Database for Discordia (Discord clone)',
+    image: '',
+    url: 'LuiSauter/discordia-backend',
+    authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
+    tags: [node, typeScript, mongoose, mongoDB],
+  },
+  {
+    title: 'Markdown preview',
+    description:
+      'Markdown Preview is an fast editor of markdown with preview document - Desktop ✨',
+    image: '',
+    url: 'Simply-Markdown/markdown-preview/development',
+    authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
+    tags: [node, typeScript, javaScript, react, electron, css],
+  },
+  {
+    title: 'Markdown preview web',
+    description:
+      'Markdown Preview is an fast editor of markdown with preview document ✨',
+    image: '',
+    url: 'Simply-Markdown/mdpreview-web/development',
+    authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
+    tags: [javaScript, next, react, css],
   },
 ]
