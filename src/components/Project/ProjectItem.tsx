@@ -32,7 +32,7 @@ export const ProjectItem = ({ description, tags, title, url }: Project) => {
   }
 
   return (
-    <Link href={`https://github.com/LuiSauter/${url}`}>
+    <Link href={`https://github.com/${url.split('/development')[0]}`}>
       <a
         target='_blank'
         className={style.article}
@@ -47,7 +47,7 @@ export const ProjectItem = ({ description, tags, title, url }: Project) => {
           <h2>{title}</h2>
           <span className={style.visibility}>Public</span>
           <img
-            src={`https://badgen.net/github/commits/LuiSauter/${url}`}
+            src={`https://badgen.net/github/commits/${url}`}
             title={url}
             alt='Luis Gabriel Janco'
           />
