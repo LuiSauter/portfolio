@@ -12,6 +12,12 @@ export const technologiesIcons = {
     styledComponent: {svg: <p>{'< 💅 >'}</p>,skill: 'StyledComponent',color: '#e6658e', link: 'https://styled-components.com/' },
     tailwindcss: {svg: icons.tailwindcss,skill: 'Tailwind CSS',color: '#0099ff', link: 'https://tailwindcss.com/' },
     graphQL: { svg: icons.graphql, skill: 'GraphQL', color: '#e10098', link: 'https://graphql.org/' },
+    electron:{
+      svg: <p>Electronjs</p>,
+      skill: 'Electronjs',
+      color: '#9ee9f8',
+      link: 'https://www.electronjs.org/',
+    }
   },
   backend: {
     node: { svg: icons.node, skill: 'NodeJS', color: '#78c83a', link: 'https://nodejs.org/en/' },

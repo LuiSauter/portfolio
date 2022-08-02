@@ -42,34 +42,14 @@ const Projects: NextPage = (): JSX.Element => {
             tags={project.tags}
           />
         ))}
-        {/* {projectsReverse.length % 2 !== 0 && <br />} */}
-        {/* <div className='stats'>
-          <img
-            className='current-streak'
-            src={`https://github-readme-streak-stats.herokuapp.com/?user=LuiSauter&theme=${
-              isDarkMode.isDark ? 'react' : 'default'
-            }`}
-          />
-        </div>
-        <div className='stats'>
-          <img
-            className='current-streak'
-            src={`https://github-readme-stats.vercel.app/api?username=LuiSauter&theme=${
-              isDarkMode.isDark ? 'react' : 'default'
-            }`}
-          />
-        </div>
-        <div className='stats'>
-          <img
-            className='current-streak'
-            src={`https://github-readme-stats.vercel.app/api/top-langs/?username=LuiSauter&layout=compact&theme=${
-              isDarkMode.isDark ? 'react' : 'default'
-            }`}
-          />
-        </div> */}
       </section>
     </>
   )
 }
 
 export default Projects
+
+/**
+ * @alias images of github repository
+ * @template https://github-readme-streak-stats.herokuapp.com/?user=LuiSauter&theme=react
+ */

@@ -7,22 +7,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
-              `,
-            }}
-          /> */}
           <meta charSet='utf-8' />
-          <link rel='icon' href='/sauterdev.jpg' />
           <meta
             name='description'
             content='Proffesional Portfolio for Web Developer, Front-End Developer, Back-End Developer, Full-Stack Developer, and more.'
@@ -34,7 +19,7 @@ class MyDocument extends Document {
             content='Proffesional Portfolio for Web Developer, Front-End Developer, Back-End Developer, Full-Stack Developer, and more.'
           />
           <meta name='twitter:card' content='summary_large_image' />
-          <link rel='icon' href='/favicon.ico' />
+          <link rel='icon' href='/sauterdev.jpg' />
         </Head>
         <body>
           <Main />
