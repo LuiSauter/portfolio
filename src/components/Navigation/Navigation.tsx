@@ -21,7 +21,6 @@ const Navigation: React.FC = () => {
       }
     }
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       cleanup = false
     }
   }, [toggle])
@@ -30,16 +29,12 @@ const Navigation: React.FC = () => {
     playSound({ audioSrc: '/sounds/click.mp3', volume: 0.3, time: 0.8 })
   }
 
-  const mouseEnter = () => {
-    playSound({ audioSrc: '/sounds/nav-hover-2.mp3', volume: 0.7, time: 0.9 })
-  }
-
   return (
     <header className={style.header}>
       <div className={style.navbar}>
         <h1 className={style.title}>
           <Link href='/'>
-            <a onClick={handleClick} onMouseEnter={mouseEnter}>Luis Gabriel Janco</a>
+            <a onClick={handleClick}>Luis Gabriel Janco</a>
           </Link>
         </h1>
         <nav className={style.nav}>

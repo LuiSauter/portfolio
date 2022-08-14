@@ -18,7 +18,6 @@ export const ProjectItem = ({ description, tags, title, url }: Project) => {
   useEffect(() => {
     cleanup && setMounted(true)
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       cleanup = false
     }
   }, [])
