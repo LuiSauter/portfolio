@@ -10,9 +10,6 @@ type Props = {
 }
 const NavLink: React.FC<Props> = ({ viewport, handleToggle }): JSX.Element => {
   const { playSound } = useSound()
-  const mouseEnter = () => {
-    playSound({ audioSrc: '/sounds/nav-hover-2.mp3', volume: 0.7, time: 0.9 })
-  }
 
   const handleClick = () => {
     playSound({ audioSrc: '/sounds/click.mp3', volume: 0.3, time: 0.8 })
@@ -23,7 +20,7 @@ const NavLink: React.FC<Props> = ({ viewport, handleToggle }): JSX.Element => {
     <ul className={viewport ==='mobile' ? style.navMenuContent : style.navMenuDesktop}>
       {hrefs.map((link, index) => (
         <Link href={link.href} key={index}>
-          <a onMouseEnter={mouseEnter} onClick={handleClick} className={style.link}>{link.name}</a>
+          <a onClick={handleClick} className={style.link}>{link.name}</a>
         </Link>
       ))}
     </ul>
