@@ -1,4 +1,4 @@
-// server rendering styeld-components :)
+/* eslint-disable @next/next/no-sync-scripts */
 import React, { ReactElement } from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
@@ -20,6 +20,10 @@ class MyDocument extends Document {
           />
           <meta name='twitter:card' content='summary_large_image' />
           <link rel='icon' href='/sauterdev.jpg' />
+          <meta
+            name='google-site-verification'
+            content='nk6ETUfejHtjHnkXEBzgWhOOX_k-m3iSSVxpoEbVzGM'
+          />
         </Head>
         <body>
           <Main />
