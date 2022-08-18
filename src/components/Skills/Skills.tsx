@@ -33,8 +33,8 @@ const Skills: React.FC<Props> = ({ gradient }) => {
       <header className={style.header}>
         <h2>
           Since I began my career as a developer, I have accumulated extensive
-          experience in designing, developing, testing and improving
-          applications and websites.
+          experience in designing as a development products with testing and
+          improving applications.
         </h2>
       </header>
       <div
