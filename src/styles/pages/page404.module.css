@@ -1,0 +1,28 @@
+.page404 {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.page404 figure {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin: 0;
+}
+
+@media screen and (min-width: 960px) {
+  .page404 {
+    padding-top: 72px;
+  }
+  .page404 figure {
+    position: relative;
+    width: 80vw;
+    height: calc(100vh - 125px - 72px);
+    overflow: hidden;
+    margin: 0;
+  }
+}
