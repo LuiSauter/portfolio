@@ -3,6 +3,7 @@ import Image from 'next/image'
 import style from '../styles/pages/me.module.css'
 import Head from 'next/head'
 import Atropos from 'atropos/react'
+import { certificates, experience } from '../assets/data/experience'
 
 interface Props {
   experience: {
@@ -113,31 +114,12 @@ const Me: React.FC<Props> = ({ experience }) => {
 
 export default Me
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
-    const data = [
-      {
-        date: 'December 2020 to February 2022',
-        image: '/images/experience/fiverr.png',
-        title: 'Frontend Web Developer',
-        listTasks: ['Design and implementation of a search engine with apollo client.', 'Developing continuous integration tests, optimizing the user experience.', 'Management and execution of transformation of react.js classes towards a Single-Page Application (SPA) decoupled from the Back-End implemented with react.js hooks based on Hexagonal Architecture.'],
-      },
-      {
-        date: 'February 2022 to May 2022',
-        image: '/images/experience/professional-rest.png',
-        title: 'Professional Rest',
-        listTasks: ['Professional development of soft leadership and teamwork skills.', 'Professional rest.'],
-      },
-      {
-        date: 'May 2022 - present',
-        image: '/images/experience/workana.png',
-        title: 'Frontend Web Developer',
-        listTasks: ['Development of microservices with express.js and GraphQL.', 'Development of web applications const React and mobile applications with React Native.', 'Identifying performance bottlenecks, reducing dependencies and improving the development experience.'],
-      },
-    ]
     return {
       props: {
-        experience: data.reverse(),
+        experience: experience.reverse(),
+        certificates,
       },
     }
   } catch (error) {
