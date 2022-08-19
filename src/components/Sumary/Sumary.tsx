@@ -21,7 +21,7 @@ function countDays({ init, current }: PropsDate): number {
 const Sumary: React.FC = () => {
   const [coffeeCount, setCoffeeCount] = useState('010')
   useEffect(() => {
-    const initialDate = new Date("08/01/2021")
+    const initialDate = new Date("07/01/2021")
     const currentDay = new Date(Date.now())
     setCoffeeCount(
       new Intl.NumberFormat('en').format(
@@ -38,14 +38,14 @@ const Sumary: React.FC = () => {
           <figure>
             <BookIcon />
           </figure>
-          <h4>Cursos terminados</h4>
+          <h4>Completed courses</h4>
           <span>{frontStack + backStack + 3}</span>
         </article>
-        <article className={style.card}>
+        <article className={style.card} title='coffee consumed since the beginning of my career.'>
           <figure>
             <CoffeIcon />
           </figure>
-          <h4>Café consumido</h4>
+          <h4>coffee consumed</h4>
           <span>{coffeeCount}</span>
         </article>
       </div>

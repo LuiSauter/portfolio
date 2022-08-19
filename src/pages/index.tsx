@@ -1,13 +1,17 @@
+import { Fragment, useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
+import Atropos from 'atropos/react';
+
+import useSound from '../hooks/useSound'
 import Features from '../components/Features/Features'
 import Skills from '../components/Skills/Skills'
-import style from '../styles/pages/index.module.css'
 import Sumary from '../components/Sumary/Sumary'
-import useSound from '../hooks/useSound'
+
+import style from '../styles/pages/index.module.css'
+import 'atropos/css'
 
 function getRandom(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -34,7 +38,7 @@ const HomePage: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Luis Gabriel Janco | FullStack Developer 🧑‍💻</title>
+        <title>Full-Stack Developer | Luis Gabriel Janco</title>
       </Head>
       <section className={style.section}>
         <div className={style.hero}>
@@ -64,17 +68,16 @@ const HomePage: NextPage = () => {
             </span>
           </h1>
           <p>
-            Full-Stack Web Developer and <span className={style.js}></span>
-            <span className={style.lover}>Lover</span>
+            Full-Stack Web Developer and{' '}
+            <span className={style.js}>JavaScript</span> lover.
           </p>
           <h2 className={style.tagline}>
             Passionate about technology, lover of Open-Source and teamwork.
           </h2>
           <div className={style.actions}>
-            <Link href='/'>
+            <Link href='/me'>
               <a
                 onClick={handleClick}
-                id='shadow-gradient'
                 aria-label={gradientLabel}
                 className={style.action}
               >
@@ -82,10 +85,14 @@ const HomePage: NextPage = () => {
               </a>
             </Link>
             <Link href='#sumary'>
-              <a onClick={handleClick} className={style.actionExtra}>Contact</a>
+              <a onClick={handleClick} className={style.actionExtra}>
+                Contact
+              </a>
             </Link>
             <Link href='#sumary'>
-              <a onClick={handleClick} className={style.actionExtra}>My Summary</a>
+              <a onClick={handleClick} className={style.actionExtra}>
+                My Summary
+              </a>
             </Link>
           </div>
         </div>
@@ -95,6 +102,35 @@ const HomePage: NextPage = () => {
       </section>
       <section className={style.sectionSkills}>
         <Skills gradient={gradientLabel} />
+      </section>
+      <section className={style.sectionAboutme}>
+        <Atropos>
+          <Link href='/me'>
+            <a>
+              <div className={style.aboutmeImg}>
+                <figure>
+                  <Image
+                    src='/sauterdev.jpg'
+                    alt='Luis Gabriel Janco'
+                    layout='fill'
+                    objectFit='contain'
+                    priority={true}
+                    quality={100}
+                  />
+                </figure>
+              </div>
+              <div data-atropos-offset='5' className={style.aboutmeText}>
+                <h3>About me</h3>
+                <p>
+                  Find out about my work, my journey as a programmer, learn
+                  about my workflow, my achievements and my experience in the
+                  open source development world.
+                </p>
+              </div>
+              <div className={style.aboutmePointer} />
+            </a>
+          </Link>
+        </Atropos>
       </section>
       <Sumary />
     </Fragment>

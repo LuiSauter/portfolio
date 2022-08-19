@@ -7,7 +7,8 @@
   --po-white: #FFFFFF;
   --po-black: #1a1a1a;
   --po-black-pure: #000000;
-  --po-indigo: #213547;
+  --po-indigo: #4438ca;
+  --po-indigo-hover: #4f46e5;
   --po-primary-dark-1: #1f2028;
   --po-gradient-1: #eebd2c;
   --po-gradient-2: #b829e7;
@@ -40,7 +41,7 @@
   --po-divider-light-2: #aaaaaabd;
   --po-text-1: #FFFFFFDE;
   --po-text-2: #EBEBEB99;
-  --po-text-3: #e0be58;
+  --po-text-3: #ead41c;
   --po-theme: dark;
 }
 
@@ -80,7 +81,6 @@ body {
 #__next {
   min-height: 100vh;
   width: 100%;
-  /* height: 100%; */
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
