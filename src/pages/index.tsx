@@ -12,6 +12,7 @@ import Sumary from '../components/Sumary/Sumary'
 
 import style from '../styles/pages/index.module.css'
 import 'atropos/css'
+import CardAboutMe from '../components/CardAboutMe'
 
 function getRandom(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -84,9 +85,9 @@ const HomePage: NextPage = () => {
                 About me
               </a>
             </Link>
-            <Link href='#sumary'>
+            <Link href='/me#achievements'>
               <a onClick={handleClick} className={style.actionExtra}>
-                Contact
+                My achievements
               </a>
             </Link>
             <Link href='#sumary'>
@@ -103,35 +104,7 @@ const HomePage: NextPage = () => {
       <section className={style.sectionSkills}>
         <Skills gradient={gradientLabel} />
       </section>
-      <section className={style.sectionAboutme}>
-        <Atropos>
-          <Link href='/me'>
-            <a>
-              <div className={style.aboutmeImg}>
-                <figure>
-                  <Image
-                    src='/sauterdev.jpg'
-                    alt='Luis Gabriel Janco'
-                    layout='fill'
-                    objectFit='contain'
-                    priority={true}
-                    quality={100}
-                  />
-                </figure>
-              </div>
-              <div data-atropos-offset='5' className={style.aboutmeText}>
-                <h3>About me</h3>
-                <p>
-                  Find out about my work, my journey as a programmer, learn
-                  about my workflow, my achievements and my experience in the
-                  open source development world.
-                </p>
-              </div>
-              <div className={style.aboutmePointer} />
-            </a>
-          </Link>
-        </Atropos>
-      </section>
+      <CardAboutMe />
       <Sumary />
     </Fragment>
   )
