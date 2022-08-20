@@ -1,4 +1,6 @@
-.section, .sectionFeatures, .sectionSkills, .sectionAboutme {
+.section,
+.sectionFeatures,
+.sectionSkills {
   width: 100%;
   height: max-content;
   display: flex;
@@ -13,75 +15,6 @@
 
 .sectionFeatures {
   padding: 0 1.5rem;
-}
-
-.sectionAboutme {
-  padding: 5.5rem 1rem;
-  border-top: 1px solid var(--po-divider-light-1);
-}
-
-.sectionAboutme a {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: var(--po-indigo);
-  padding: 1rem;
-  border-radius: 1rem;
-  color: #FFFFFF;
-  position: relative;
-  overflow: hidden;
-  filter: drop-shadow(0 20px 25px rgb(0 0 0 / 0.15));
-  max-width: 700px;
-}
-
-.sectionAboutme a:hover {
-  background-color: var(--po-indigo-hover);
-  cursor: pointer;
-}
-
-.sectionAboutme a:hover > .aboutmePointer {
-  transform: translate(0rem, 2rem);
-}
-
-.aboutmePointer {
-  background: url('https://adventjs.dev/pointer.png') no-repeat center / contain;
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  bottom: 0rem;
-  right: 0rem;
-  transform: translate(2.5rem, 2rem);
-  transition: transform 0.3s ease-in-out;
-}
-
-
-.aboutmeImg, .aboutmeText {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.aboutmeImg figure {
-  position: relative;
-  border-radius: 50%;
-  overflow: hidden;
-  height: 120px;
-  width: 120px;
-  margin: 0;
-}
-
-.sectionAboutme h3 {
-  text-align: center;
-  font-size: 2rem;
-}
-
-.sectionAboutme p {
-  font-size: 1.1rem;
-  margin: 0;
-  line-height: 1.3;
 }
 
 .sectionSkills {
@@ -131,9 +64,11 @@
   justify-content: center;
   width: 100%;
 }
+
 .heroContent p, .heroContent h2 {
   max-width: 380px;
 }
+
 .meTitle {
   font-size: 2rem;
   margin-top: 1.5rem;
@@ -146,11 +81,13 @@
   -webkit-text-fill-color: transparent;
   z-index: 1;
 }
+
 .clip::selection {
   background: var(--po-bg-4);
   color: #fff;
   -webkit-text-fill-color: #000;
 }
+
 .heroContent p {
   font-size: 1.9rem;
   line-height: 1.2;
@@ -161,6 +98,7 @@
   letter-spacing: -0.4px;
   z-index: 1;
 }
+
 .js {
   background-color: #ead41c;
   color: #000;
@@ -221,22 +159,6 @@
   filter: drop-shadow(0 4px 10px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 10px rgba(61, 61, 61, 0.1));
 }
 
-@media screen and (min-width: 480px) {
-  .sectionAboutme a {
-    flex-direction: row;
-    padding: 2rem 1.5rem;
-  }
-
-  .sectionAboutme figure {
-    width: 150px;
-    height: 150px;
-  }
-
-  .aboutmeImg {
-    width: 70%;
-  }
-}
-
 @media screen and (min-width: 640px) {
   .section {
     padding: 4rem 3rem;
@@ -244,7 +166,7 @@
   .sectionFeatures {
     padding: 0 3rem;
   }
-  .sectionSkills, .sectionAboutme {
+  .sectionSkills {
     padding: 5.5rem 1.5rem;
   }
   .hero figure {
@@ -265,30 +187,14 @@
   .heroContent p {
     font-size: 3rem;
   }
+
   .tagline {
     font-size: 1.4rem;
   }
+
   .heroContent p, .heroContent h2 {
     min-width: 500px;
     max-width: 570px;
-  }
-
-  .sectionAboutme a {
-    flex-direction: row;
-    padding: 3rem 2rem;
-  }
-
-  .sectionAboutme a:hover > .aboutmePointer {
-    transform: translate(-1rem, 0rem);
-  }
-
-  .sectionAboutme figure {
-    width: 200px;
-    height: 200px;
-  }
-
-  .aboutmeImg {
-    width: 50%;
   }
 }
 
@@ -298,27 +204,34 @@
     margin: 0 auto;
     padding: 6rem 6rem 4rem;
   }
+
   .sectionFeatures {
     padding: 0 6rem;
   }
-  .sectionSkills, .sectionAboutme {
+
+  .sectionSkills {
     padding: 5.5rem 2rem;
   }
+
   .hero {
     order: 2;
   }
+
   .hero figure {
     width: 280px;
     height: 280px;
   }
+
   .shadow {
     width: 380px;
     height: 380px;
     filter: blur(80px);
   }
+
   .meTitle {
     font-size: 3.5rem;
   }
+
   .js {
     background-color: transparent;
     color: #ead41c;
@@ -329,12 +242,15 @@
     order: 1;
     align-items: flex-start;
   }
+
   .heroContent p, .tagline {
     text-align: start;
   }
+
   .heroContent p {
     font-size: 3.5rem;
   }
+
   .tagline {
     font-size: 1.7rem;
     margin-top: 0.5rem;
@@ -345,13 +261,15 @@
   .section {
     padding: 8rem 6rem 4rem;
   }
+
   .sectionFeatures {
     padding: 0 6rem;
   }
-    .sectionSkills,
-    .sectionAboutme {
+
+  .sectionSkills {
     padding: 5.5rem 6rem;
   }
+
   .heroContent p, .heroContent h2 {
     min-width: 680px;
     max-width: 680px;
