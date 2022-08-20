@@ -22,10 +22,10 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 0 1rem;
   color: var(--po-text-2);
   max-width: 908px;
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
 .aboutStatement h2 {
@@ -46,20 +46,27 @@
   line-height: 1.5;
 }
 
+.statementText a {
+  color: var(--po-text-3);
+}
+
+.statementText a:hover {
+  text-decoration: underline;
+}
+
 .sectionExperience {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 0 1rem;
   color: var(--po-text-2);
-  max-width: 908px;
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
 .experience h2,
 .certificates h2 {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin: 2rem 0;
   color: var(--po-text-1);
 }
 
@@ -170,6 +177,49 @@
   line-height: 1.5;
 }
 
+.certificates {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.certificatesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  position: relative;
+  gap: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+.certificateItem {
+  position: relative;
+  display: flex;
+  height: min-content;
+  overflow: hidden;
+  width: max-content;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.219));
+  transition: all 0.2s ease-out;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: var(--po-bg-blur-2);
+}
+
+.certificateItem:hover {
+  padding: 0;
+}
+
+.certificateItem figure {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
 @media screen and (min-width: 640px) {
   .aboutHero figure {
     width: 300px;
@@ -184,13 +234,30 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .sectionExperience {
+    flex-direction: row;
+    padding: 5rem 2rem;
+    justify-content: center;
+  }
+
+  .experience {
+    width: 100%;
+  }
+
+  .certificates {
+    width: 50%;
+  }
+}
+
 @media screen and (min-width: 960px) {
   .aboutHero {
     margin-top: 4.5rem;
   }
 
-  .sectionExperience {
-    flex-direction: row;
+  .aboutHero figure {
+    width: 350px;
+    height: 350px;
   }
 
   .experience, .certificates {
