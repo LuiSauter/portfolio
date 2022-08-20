@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Image from 'next/image'
 import style from '../styles/pages/me.module.css'
 import Head from 'next/head'
 import Atropos from 'atropos/react'
 import { certificates, experience } from '../assets/data/experience'
+import Modal from '../components/Modal'
 
 interface Props {
   experience: {
@@ -12,9 +13,26 @@ interface Props {
     title: string
     listTasks: string[]
   }[]
+  certificate: {
+    img: string
+    link: string
+  }[]
 }
 
-const Me: React.FC<Props> = ({ experience }) => {
+const IMAGE_STATE = {
+  imageSrc: '',
+  link: '',
+}
+
+const Me: React.FC<Props> = ({ experience, certificate }) => {
+  const [currentImage, setCurrentImage] = useState(IMAGE_STATE)
+  const [openModal, setOpenModal] = useState(false)
+
+  const handleModal = ({ imageSrc, link }: { imageSrc: string; link: string }) => {
+    setCurrentImage({ imageSrc, link })
+    setOpenModal(!openModal)
+  }
+
   return (
     <Fragment>
       <Head>
@@ -73,41 +91,64 @@ const Me: React.FC<Props> = ({ experience }) => {
         </article>
       </section>
       <section className={style.sectionExperience}>
-        <div className={style.experience}>
+        <div id='experience' className={style.experience}>
           <h2>My experience</h2>
           <div className={style.experienceContainer}>
             {experience.map((item, index) => (
               <article className={style.experienceItem} key={index}>
                 <div className={style.itemContent}>
-                  <Atropos key={index} highlight={false} shadow={false}>
-                    <figure>
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        layout='fill'
-                        objectFit='contain'
-                      />
-                    </figure>
-                    <div className={style.itemText}>
-                      <p>{item.date}</p>
-                      <h3>{item.title}</h3>
-                      <ul>
-                        {item.listTasks.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </Atropos>
+                  <figure>
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      layout='fill'
+                      objectFit='contain'
+                    />
+                  </figure>
+                  <div className={style.itemText}>
+                    <p>{item.date}</p>
+                    <h3>{item.title}</h3>
+                    <ul>
+                      {item.listTasks.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
         </div>
-        <div className={style.certificates}>
+        <div id='achievements' className={style.certificates}>
           <h2>Achievements</h2>
-          <div className={style.experienceContainer}></div>
+          <div className={style.certificatesContainer}>
+            {certificate.map((item, index) => (
+              <button
+                onClick={() =>
+                  handleModal({ imageSrc: item.img, link: item.link })
+                }
+                className={style.certificateItem}
+                key={index}
+              >
+                  <figure>
+                    <Image
+                      src={item.img}
+                      alt='certificate'
+                      layout='fill'
+                      objectFit='contain'
+                    />
+                  </figure>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
+      <Modal
+        imageSrc={currentImage.imageSrc}
+        link={currentImage.link}
+        isOpen={openModal}
+        onClose={() => handleModal(IMAGE_STATE)}
+      />
     </Fragment>
   )
 }
@@ -119,7 +160,7 @@ export async function getStaticProps() {
     return {
       props: {
         experience: experience.reverse(),
-        certificates,
+        certificate: certificates.reverse(),
       },
     }
   } catch (error) {
