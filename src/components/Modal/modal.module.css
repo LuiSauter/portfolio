@@ -5,9 +5,9 @@
   height: 100%;
   overflow: hidden;
   z-index: 10;
-  display: grid;
   place-content: center;
   place-items: center;
+  display: none;
 }
 
 .modal a {

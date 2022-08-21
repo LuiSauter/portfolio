@@ -17,28 +17,40 @@ const Modal: React.FC<Props> = ({ isOpen, onClose, imageSrc, link }) => {
 
   useEffect(() => {
     setMounted(true)
-    return () => setMounted(false)
   }, [])
+
+  useEffect(() => {
+    const modalEl = typeof document !== 'undefined' ? document.getElementById('modal') : null
+    if (modalEl) {
+      if (isOpen) {
+        modalEl.style.display = 'grid'
+      } else {
+        modalEl.style.display = 'none'
+      }
+    }
+  }, [isOpen])
 
   return mounted
     ? createPortal(
-        isOpen && (
-          <div className={style.modal}>
-            <Link href={link}>
-              <a target={'_blank'}>
-                <Atropos className={style.atropos} highlight={false} shadow={true}>
-                  <Image
-                    src={imageSrc}
-                    alt='Certificate.'
-                    layout='fill'
-                    objectFit='contain'
-                  />
-                </Atropos>
-              </a>
-            </Link>
-            <div onClick={onClose} className={style.close} />
-          </div>
-        ),
+        <div id='modal' className={style.modal}>
+          <Link href={link}>
+            <a target={'_blank'}>
+              <Atropos
+                className={style.atropos}
+                highlight={false}
+                shadow={true}
+              >
+                <Image
+                  src={imageSrc}
+                  alt='Certificate.'
+                  layout='fill'
+                  objectFit='contain'
+                />
+              </Atropos>
+            </a>
+          </Link>
+          <div onClick={onClose} className={style.close} />
+        </div>,
         document.getElementById('portal-root')!
       )
     : null
