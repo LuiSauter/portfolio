@@ -1,30 +1,22 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, Suspense } from 'react'
 import Image from 'next/image'
 import style from '../styles/pages/me.module.css'
 import Head from 'next/head'
 import Atropos from 'atropos/react'
 import { certificates, experience } from '../assets/data/experience'
-import Modal from '../components/Modal'
+import dynamic from 'next/dynamic'
+import Loading from '../components/Loading'
 
-interface Props {
-  experience: {
-    date: string
-    image: string
-    title: string
-    listTasks: string[]
-  }[]
-  certificate: {
-    img: string
-    link: string
-  }[]
-}
+const DynamicModal = dynamic(() => import('../components/Modal'), {
+  suspense: true,
+})
 
 const IMAGE_STATE = {
-  imageSrc: '',
+  imageSrc: 'https://www.sololearn.com/Certificate/CT-QZHUSNIE/png',
   link: '',
 }
 
-const Me: React.FC<Props> = ({ experience, certificate }) => {
+const Me: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(IMAGE_STATE)
   const [openModal, setOpenModal] = useState(false)
 
@@ -94,7 +86,7 @@ const Me: React.FC<Props> = ({ experience, certificate }) => {
         <div id='experience' className={style.experience}>
           <h2>My experience</h2>
           <div className={style.experienceContainer}>
-            {experience.map((item, index) => (
+            {experience.reverse().map((item, index) => (
               <article className={style.experienceItem} key={index}>
                 <div className={style.itemContent}>
                   <figure>
@@ -122,7 +114,7 @@ const Me: React.FC<Props> = ({ experience, certificate }) => {
         <div id='achievements' className={style.certificates}>
           <h2>Achievements</h2>
           <div className={style.certificatesContainer}>
-            {certificate.map((item, index) => (
+            {certificates.reverse().map((item, index) => (
               <button
                 onClick={() =>
                   handleModal({ imageSrc: item.img, link: item.link })
@@ -130,43 +122,29 @@ const Me: React.FC<Props> = ({ experience, certificate }) => {
                 className={style.certificateItem}
                 key={index}
               >
-                  <figure>
-                    <Image
-                      src={item.img}
-                      alt='certificate'
-                      layout='fill'
-                      objectFit='contain'
-                    />
-                  </figure>
+                <figure>
+                  <Image
+                    src={item.img}
+                    alt='certificate'
+                    layout='fill'
+                    objectFit='contain'
+                  />
+                </figure>
               </button>
             ))}
           </div>
         </div>
       </section>
-      <Modal
-        imageSrc={currentImage.imageSrc}
-        link={currentImage.link}
-        isOpen={openModal}
-        onClose={() => handleModal(IMAGE_STATE)}
-      />
+      <Suspense fallback={<Loading />}>
+        <DynamicModal
+          imageSrc={currentImage.imageSrc}
+          link={currentImage.link}
+          isOpen={openModal}
+          onClose={() => handleModal(IMAGE_STATE)}
+        />
+      </Suspense>
     </Fragment>
   )
 }
 
 export default Me
-
-export async function getStaticProps() {
-  try {
-    return {
-      props: {
-        experience: experience.reverse(),
-        certificate: certificates.reverse(),
-      },
-    }
-  } catch (error) {
-    return {
-      notFound: true,
-      experience: [],
-    }
-  }
-}

@@ -3,7 +3,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import Atropos from 'atropos/react';
 
 import useSound from '../hooks/useSound'
 import Features from '../components/Features/Features'
@@ -11,7 +10,6 @@ import Skills from '../components/Skills/Skills'
 import Sumary from '../components/Sumary/Sumary'
 
 import style from '../styles/pages/index.module.css'
-import 'atropos/css'
 import CardAboutMe from '../components/CardAboutMe'
 
 function getRandom(min: number, max: number) {
