@@ -19,7 +19,7 @@
   background-color: var(--po-indigo);
   padding: 1rem;
   border-radius: 1rem;
-  color: #ffffff;
+  color: #fff;
   position: relative;
   overflow: hidden;
   filter: drop-shadow(0 20px 25px rgb(0 0 0 / 0.15));
@@ -32,7 +32,7 @@
 }
 
 .sectionAboutme a:hover > .aboutmePointer {
-  transform: translate(0rem, 2rem);
+  transform: translate(0, 2rem);
 }
 
 .aboutmePointer {
@@ -40,8 +40,8 @@
   width: 70px;
   height: 70px;
   position: absolute;
-  bottom: 0rem;
-  right: 0rem;
+  bottom: 0;
+  right: 0;
   transform: translate(2.5rem, 2rem);
   transition: transform 0.3s ease-in-out;
 }
@@ -103,7 +103,7 @@
   }
 
   .sectionAboutme a:hover > .aboutmePointer {
-    transform: translate(-1rem, 0rem);
+    transform: translate(-1rem, 0);
   }
 
   .sectionAboutme figure {
