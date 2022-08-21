@@ -1,11 +1,16 @@
 import type { NextPage } from 'next'
-import React, { Fragment } from 'react'
+import React, { Fragment, Suspense } from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import projects from '../assets/data/projects'
 import { ProjectItem } from '../components/Project/ProjectItem'
 import * as icons from '../assets/icons'
 import style from '../styles/pages/projects.module.css'
-import CardAboutMe from '../components/CardAboutMe'
+import Loading from '../components/Loading'
+
+const DynamicCardAbout = dynamic(() => import('../components/CardAboutMe'), {
+  suspense: true,
+})
 
 const Projects: NextPage = (): JSX.Element => {
   const projectsReverse = [...projects].reverse()
@@ -44,7 +49,9 @@ const Projects: NextPage = (): JSX.Element => {
           />
         ))}
       </section>
-      <CardAboutMe />
+      <Suspense fallback={<Loading />}>
+        <DynamicCardAbout />
+      </Suspense>
     </Fragment>
   )
 }
