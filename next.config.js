@@ -6,14 +6,15 @@ module.exports = {
     domains: [
       'https://gpvc.arturio.dev',
       'gpvc.arturio.dev',
-      'https://sauterdev.vercel.app'
+      'https://sauterdev.vercel.app',
+      'gpvc.arturio.dev',
+      'www.sololearn.com',
+      'i.ibb.co'
     ],
   },
   domains: [
     'localhost',
     'https://sauterdev.vercel.app',
     '192.168.0.10:3000',
-    'https://gpvc.arturio.dev',
-    'gpvc.arturio.dev'
   ]
 }

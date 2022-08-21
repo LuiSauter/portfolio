@@ -17,12 +17,25 @@ const NavLink: React.FC<Props> = ({ viewport, handleToggle }): JSX.Element => {
   }
 
   return (
-    <ul className={viewport ==='mobile' ? style.navMenuContent : style.navMenuDesktop}>
-      {hrefs.map((link, index) => (
-        <Link href={link.href} key={index}>
-          <a onClick={handleClick} className={style.link}>{link.name}</a>
-        </Link>
-      ))}
+    <ul
+      className={
+        viewport === 'mobile' ? style.navMenuContent : style.navMenuDesktop
+      }
+    >
+      {hrefs.map((link, index) =>
+        link.disabled ? (
+          <span key={index} className={style.disabled}>{link.name}</span>
+        ) : (
+          <Link href={link.href} key={index}>
+            <a
+              onClick={handleClick}
+              className={style.link}
+            >
+              {link.name}
+            </a>
+          </Link>
+        )
+      )}
     </ul>
   )
 }
