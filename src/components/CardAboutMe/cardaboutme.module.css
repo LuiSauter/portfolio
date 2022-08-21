@@ -1,0 +1,129 @@
+.sectionAboutme {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.sectionAboutme {
+  padding: 5.5rem 1rem;
+  border-top: 1px solid var(--po-divider-light-1);
+}
+
+.sectionAboutme a {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--po-indigo);
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  filter: drop-shadow(0 20px 25px rgb(0 0 0 / 0.15));
+  max-width: 700px;
+}
+
+.sectionAboutme a:hover {
+  background-color: var(--po-indigo-hover);
+  cursor: pointer;
+}
+
+.sectionAboutme a:hover > .aboutmePointer {
+  transform: translate(0rem, 2rem);
+}
+
+.aboutmePointer {
+  background: url('https://adventjs.dev/pointer.png') no-repeat center / contain;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  bottom: 0rem;
+  right: 0rem;
+  transform: translate(2.5rem, 2rem);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.aboutmeImg, .aboutmeText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.aboutmeImg figure {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 120px;
+  width: 120px;
+  margin: 0;
+}
+
+.sectionAboutme h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.sectionAboutme p {
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 480px) {
+  .sectionAboutme a {
+    flex-direction: row;
+    padding: 2rem 1.5rem;
+  }
+
+  .sectionAboutme figure {
+    width: 150px;
+    height: 150px;
+  }
+
+  .aboutmeImg {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .sectionAboutme {
+    padding: 5.5rem 1.5rem;
+  }
+
+  .sectionAboutme a {
+    flex-direction: row;
+    padding: 3rem 2rem;
+  }
+
+  .sectionAboutme a:hover > .aboutmePointer {
+    transform: translate(-1rem, 0rem);
+  }
+
+  .sectionAboutme figure {
+    width: 200px;
+    height: 200px;
+  }
+
+  .aboutmeImg {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .sectionAboutme {
+    padding: 5.5rem 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sectionAboutme {
+    padding: 5.5rem 6rem;
+  }
+}
