@@ -57,7 +57,7 @@
 
 .visibility {
   border: 1px solid var(--po-divider-light-1);
-  padding: 0rem 0.4rem;
+  padding: 0 0.4rem;
   border-radius: .8rem;
   color: inherit;
   font-size: 0.8rem;

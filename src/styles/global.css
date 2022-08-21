@@ -1,10 +1,11 @@
 *, :before, :after {
   box-sizing: border-box;
   transition: background-color 0.2s ease-out;
+  scroll-behavior: smooth;
 }
 
 :root {
-  --po-white: #FFFFFF;
+  --po-white: #fff;
   --po-black: #1a1a1a;
   --po-black-pure: #000000;
   --po-indigo: #4438ca;
@@ -14,12 +15,12 @@
   --po-gradient-2: #b829e7;
 }
 :root {
-  --po-bg-1: #ffffff;
+  --po-bg-1: #fff;
   --po-bg-2: #000000;
   --po-bg-3: #f2f2f2;
   --po-bg-4: #e5e5e5;
   --po-bg-5: #1a1a1a;
-  --po-bg-blur: #FFFFFFb3;
+  --po-bg-blur: #ffffffb3;
   --po-bg-blur-2: #f2f2f27e;
   --po-divider-light-1: #3c3c3c1f;
   --po-divider-light-2: #42424275;
@@ -39,7 +40,7 @@
   --po-bg-blur-2: #2e303a6e;
   --po-divider-light-1: #5454547a;
   --po-divider-light-2: #aaaaaabd;
-  --po-text-1: #FFFFFFDE;
+  --po-text-1: #ffffffDE;
   --po-text-2: #EBEBEB99;
   --po-text-3: #ead41c;
   --po-theme: dark;
