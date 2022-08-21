@@ -151,16 +151,16 @@ export default [
     description:
       'Markdown Preview is an fast editor of markdown with preview document - Desktop ✨',
     image: '',
-    url: 'Simply-Markdown/markdown-preview/development',
+    url: 'rundevs/markdown-preview/development',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [node, typeScript, javaScript, react, electron, css],
   },
   {
-    title: 'Markdown preview web',
+    title: 'Rundev - web',
     description:
-      'Markdown Preview is an fast editor of markdown with preview document ✨',
+      'Markdown Preview, JavaScript & other Languages in run-time sparkles',
     image: '',
-    url: 'Simply-Markdown/mdpreview-web/development',
+    url: 'rundevs/rundev/development',
     authors: [{ name: 'sauterdev', image: '/sauterdev.jpg' }],
     tags: [javaScript, next, react, css],
   },
