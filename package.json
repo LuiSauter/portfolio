@@ -3,9 +3,6 @@
   "private": true,
   "version": "1.0.0-beta.1",
   "description": "My professional portfolio",
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "scripts": {
     "deploy": "npm run test && vercel",
     "dev": "next dev",
