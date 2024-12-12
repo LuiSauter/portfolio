@@ -74,24 +74,16 @@ const HomePage: NextPage = () => {
             Passionate about technology, lover of Open-Source and teamwork.
           </h2>
           <div className={style.actions}>
-            <Link href='/me'>
-              <a
-                onClick={handleClick}
-                aria-label={gradientLabel}
-                className={style.action}
-              >
-                About me
-              </a>
+            <Link href='/me' onClick={handleClick}
+              aria-label={gradientLabel}
+              className={style.action}>
+              About me
             </Link>
-            <Link href='/me#achievements'>
-              <a onClick={handleClick} className={style.actionExtra}>
-                My achievements
-              </a>
+            <Link href='/me#achievements' onClick={handleClick} className={style.actionExtra}>
+              My achievements
             </Link>
-            <Link href='#sumary'>
-              <a onClick={handleClick} className={style.actionExtra}>
-                My Summary
-              </a>
+            <Link href='#sumary' onClick={handleClick} className={style.actionExtra}>
+              My Summary
             </Link>
           </div>
         </div>

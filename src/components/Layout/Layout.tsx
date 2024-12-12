@@ -10,7 +10,7 @@ interface Props {
   children: JSX.Element | JSX.Element[]
 }
 
-export const Layout = ({children}: Props) => {
+export const Layout = ({ children }: Props) => {
   return (
     <div className={style.layout}>
       <Navigation />
@@ -38,9 +38,7 @@ export const Layout = ({children}: Props) => {
         <div className={style.created}>
           <span>
             Copyright © 2021-2022 Develop by{' '}
-            <Link href='https://github.com/LuiSauter'>
-              <a target='_blank'>Luis Gabriel Janco</a>
-            </Link>
+            <a href='https://github.com/LuiSauter' target='_blank' rel='noreferrer'>Luis Gabriel Janco</a>
           </span>
         </div>
       </footer>

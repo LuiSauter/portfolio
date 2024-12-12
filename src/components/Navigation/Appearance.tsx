@@ -24,7 +24,7 @@ const Appearance: React.FC = () => {
     playSound({audioSrc:'/sounds/button-3.mp3', volume: 1, time: 0.4})
   }
 
-  const titleTheme = mounted && checkIfIsDark() ? 'theme Light' : 'theme Dark' || ''
+  const titleTheme = mounted ? (checkIfIsDark() ? 'theme Light' : 'theme Dark') : ''
 
   return (
     <div className={style.appearance}>

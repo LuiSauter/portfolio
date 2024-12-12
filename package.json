@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0-beta.1",
   "description": "My professional portfolio",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "deploy": "npm run test && vercel",
     "dev": "next dev",
@@ -11,11 +14,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "atropos": "1.0.2",
-    "next": "13.5.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sharp": "0.32.6"
+    "atropos": "^1.0.2",
+    "next": "^13.5.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/node": "18.0.6",
@@ -25,6 +28,6 @@
     "eslint-config-next": "12.0.3",
     "eslint-config-prettier": "8.3.0",
     "prettier": "2.4.1",
-    "typescript": "4.4.4"
+    "typescript": "^5.7.2"
   }
 }

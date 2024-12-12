@@ -57,16 +57,12 @@ const Skills: React.FC<Props> = ({ gradient }) => {
           <h3>Front-End Stack</h3>
           {Object.values(technologiesIcons.frontend).map(
             (svg, index: number) => (
-              <Link href={svg.link} key={index}>
-                <a
-                  onClick={handleClick}
-                  onMouseEnter={mouseEnter}
-                  target='_blank'
-                  style={{ color: svg.color }}
-                  title={svg.skill}
-                >
-                  {svg.svg}
-                </a>
+              <Link href={svg.link} key={index} onClick={handleClick}
+                onMouseEnter={mouseEnter}
+                target='_blank'
+                style={{ color: svg.color }}
+                title={svg.skill}>
+                {svg.svg}
               </Link>
             )
           )}
@@ -75,16 +71,12 @@ const Skills: React.FC<Props> = ({ gradient }) => {
           <h3>Back-End Stack</h3>
           {Object.values(technologiesIcons.backend).map(
             (svg, index: number) => (
-              <Link href={svg.link} key={index}>
-                <a
-                  onClick={handleClick}
-                  onMouseEnter={mouseEnter}
-                  target='_blank'
-                  style={{ color: svg.color }}
-                  title={svg.skill}
-                >
-                  {svg.svg}
-                </a>
+              <Link href={svg.link} key={index} onClick={handleClick}
+                onMouseEnter={mouseEnter}
+                target='_blank'
+                style={{ color: svg.color }}
+                title={svg.skill}>
+                {svg.svg}
               </Link>
             )
           )}

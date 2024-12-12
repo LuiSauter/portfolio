@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <meta charSet='utf-8' />
           <meta
             name='description'
-            content='Front-end developer specializing in the javascript language giving value to software products.'
+            content='Front-end developer specializing in the javascript language giving value to software products. FullStack software development service'
           />
           <meta property='og:title' content='Luis Gabriel Janco' />
           <meta property='og:type' content='website' />

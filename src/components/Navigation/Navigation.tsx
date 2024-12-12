@@ -33,8 +33,8 @@ const Navigation: React.FC = () => {
     <header className={style.header}>
       <div className={style.navbar}>
         <h1 className={style.title}>
-          <Link href='/'>
-            <a onClick={handleClick}>Luis Gabriel Janco</a>
+          <Link href='/' onClick={handleClick}>
+            Luis Gabriel Janco
           </Link>
         </h1>
         <nav className={style.nav}>

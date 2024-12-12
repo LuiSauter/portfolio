@@ -26,44 +26,42 @@ export const ProjectItem = ({ description, tags, title, url }: Project) => {
     playSound({ audioSrc: '/sounds/hover.mp3', volume: 1, time: 0.2 })
   }
 
-  const handleClick= () => {
+  const handleClick = () => {
     playSound({ audioSrc: '/sounds/button-2.mp3', volume: 0.7, time: 0.25 })
   }
 
   return (
-    <Link href={`https://github.com/${url.split('/development')[0]}`}>
-      <a
-        target='_blank'
-        className={style.article}
-        onMouseEnter={mouseEnter}
-        onClick={handleClick}
-        style={{
-          maxWidth: (mounted && getRandomInt(450, 530)) || 450 + 'px',
-        }}
-      >
-        <div className={style.header}>
-          <span className={style.bookIcon}>{icon.book}</span>
-          <h2>{title}</h2>
-          <span className={style.visibility}>Public</span>
-          <img
-            src={`https://badgen.net/github/commits/${url}`}
-            title={url}
-            alt='Luis Gabriel Janco'
-          />
-        </div>
-        <p className={style.description}>{description}</p>
-        <ul className={style.languages}>
-          {tags.map((tag, index: number) => (
-            <li key={index} className={style.langItem}>
-              <span
-                className={style.circle}
-                style={{ backgroundColor: tag.color }}
-              />
-              <span>{tag.skill}</span>
-            </li>
-          ))}
-        </ul>
-      </a>
+    <Link
+      href={`https://github.com/${url.split('/development')[0]}`}
+      target='_blank'
+      className={style.article}
+      onMouseEnter={mouseEnter}
+      onClick={handleClick}
+      style={{ maxWidth: (mounted && getRandomInt(450, 530)) || 450 + 'px' }}
+      passHref
+    >
+      <div className={style.header}>
+        <span className={style.bookIcon}>{icon.book}</span>
+        <h2>{title}</h2>
+        <span className={style.visibility}>Public</span>
+        <img
+          src={`https://badgen.net/github/commits/${url}`}
+          title={url}
+          alt='Luis Gabriel Janco'
+        />
+      </div>
+      <p className={style.description}>{description}</p>
+      <ul className={style.languages}>
+        {tags.map((tag, index: number) => (
+          <li key={index} className={style.langItem}>
+            <span
+              className={style.circle}
+              style={{ backgroundColor: tag.color }}
+            />
+            <span>{tag.skill}</span>
+          </li>
+        ))}
+      </ul>
     </Link>
   )
 }

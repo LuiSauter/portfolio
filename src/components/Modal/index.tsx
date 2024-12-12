@@ -32,27 +32,25 @@ const Modal: React.FC<Props> = ({ isOpen, onClose, imageSrc, link }) => {
 
   return mounted
     ? createPortal(
-        <div id='modal' className={style.modal}>
-          <Link href={link}>
-            <a target={'_blank'}>
-              <Atropos
-                className={style.atropos}
-                highlight={false}
-                shadow={true}
-              >
-                <Image
-                  src={imageSrc}
-                  alt='Certificate.'
-                  layout='fill'
-                  objectFit='contain'
-                />
-              </Atropos>
-            </a>
-          </Link>
-          <div onClick={onClose} className={style.close} />
-        </div>,
-        document.getElementById('portal-root')!
-      )
+      <div id='modal' className={style.modal}>
+        <Link href={link} target='_blank' passHref>
+          <Atropos
+            className={style.atropos}
+            highlight={false}
+            shadow={true}
+          >
+            <Image
+              src={imageSrc}
+              alt='Certificate.'
+              layout='fill'
+              objectFit='contain'
+            />
+          </Atropos>
+        </Link>
+        <div onClick={onClose} className={style.close} />
+      </div>,
+      document.getElementById('portal-root')!
+    )
     : null
 }
 

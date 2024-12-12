@@ -26,13 +26,9 @@ const NavLink: React.FC<Props> = ({ viewport, handleToggle }): JSX.Element => {
         link.disabled ? (
           <span key={index} className={style.disabled}>{link.name}</span>
         ) : (
-          <Link href={link.href} key={index}>
-            <a
-              onClick={handleClick}
-              className={style.link}
-            >
-              {link.name}
-            </a>
+          <Link href={link.href} key={index} onClick={handleClick}
+            className={style.link}>
+            {link.name}
           </Link>
         )
       )}
